@@ -1,0 +1,31 @@
+<div class="page-background">
+  <div align="center">
+    <h5 style="margin-top: 15px;">
+      Bienvenido! Introduce tu usuario y contraseña para iniciar sesión
+    </h5>
+    <br>
+  </div>
+
+  <div class="login-background">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="input" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput class="loginInput" type="text" formControlName="email" />
+      </mat-form-field>
+
+      <mat-form-field class="input" appearance="outline">
+        <mat-label>Contraseña</mat-label>
+        <input matInput class="loginInput" type="password" formControlName="password" />
+      </mat-form-field>
+
+      <div fxLayout="row" fxLayoutAlign="flex-end" class="actions">
+        <button
+          [disabled]="loginForm.invalid"
+          type="submit"
+        >
+          Ingresar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
