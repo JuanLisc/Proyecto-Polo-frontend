@@ -17,6 +17,7 @@
                 <app-form-errors
                   fieldName="{{ 'NewUserComponent.firstName-field' | translate }}"
                   [control]="registerForm.get('firstName')"
+                  [customErrorMsg]="customFirstNameErrorMsgs"
                 >
                 </app-form-errors>
             </mat-form-field>
@@ -29,6 +30,7 @@
               <app-form-errors
                 fieldName="{{ 'NewUserComponent.lastName-field' | translate }}"
                 [control]="registerForm.get('lastName')"
+                [customErrorMsg]="customLastNameErrorMsgs"
               >
               </app-form-errors>
             </mat-form-field>
@@ -58,6 +60,7 @@
                 <app-form-errors error-content 
                   fieldName="{{ 'NewUserComponent.confirmEmail-field' | translate }}"
                   [control]="registerForm.get('confirmEmail')"
+                  [customErrorMsg]="customConfirmEmailErrorMsgs"
                 >
                 </app-form-errors>
               </mat-form-field>
@@ -72,7 +75,7 @@
                 <app-form-errors
                   fieldName="{{ 'NewUserComponent.password-field' | translate }}"
                   [control]="registerForm.get('password')"
-
+                  [customErrorMsg]="customPasswordErrorMsgs"
                 >
                 </app-form-errors>
               </mat-form-field>
@@ -85,7 +88,7 @@
                 <app-form-errors
                   fieldName="{{ 'NewUserComponent.confirm-password-field' | translate }}"
                   [control]="registerForm.get('confirmPassword')"
-
+                  [customErrorMsg]="customConfirmPasswordErrorMsgs"
                 >
                 </app-form-errors>
               </mat-form-field>
@@ -112,13 +115,15 @@
         <mat-divider class="form-group-divider"></mat-divider>
         <div fxLayout="row" fxLayoutAlign="flex-end" fxFlex="50%">
           <button 
-            stPrimaryBtn
+            mat-flat-button
+            [disabled]="registerForm.invalid"
+            type="submit"
             (click)="onSubmit()"
             style="margin-right: 15px;"
           >
             {{ 'NewUserComponent.submit' | translate }}
           </button>
-          <button stGhostBtn (click)='onCancel()'>{{ 'NewUserComponent.cancel' | translate }}</button>
+          <button stGhostBtn mat-flat-button (click)='onCancel()'>{{ 'NewUserComponent.cancel' | translate }}</button>
         </div>
       </div>
     </form>

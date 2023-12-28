@@ -9,6 +9,7 @@ import { NavBarComponent } from './modules/nav-bar/nav-bar.component';
 import { MaterialModule } from '../shared/material/material.module';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
         },
         deps: [HttpClient]
       }
-    })
+    }),
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

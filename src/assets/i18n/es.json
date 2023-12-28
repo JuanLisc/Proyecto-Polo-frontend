@@ -1,4 +1,11 @@
 {
+  "LoginComponent": {
+    "title": "Bienvenido! Introduce tu usuario y contraseña para iniciar sesión",
+    "email-field": "Email",
+    "pwd-field": "Contraseña",
+    "submit": "Ingresar",
+    "incorrect-data": "Nombre de usuario y/o contraseña incorrectos."
+  },
   "UserListComponent": {
     "title": "Usuarios",
     "table": {
@@ -25,6 +32,31 @@
     "email-field": "Email",
     "confirmEmail-field": "Confirmar email",
     "submit": "Crear",
-    "cancel": "Cancelar"
+    "cancel": "Cancelar",
+    "email-already-registered": "Nombre de email ya registrado, intente con uno diferente.",
+    "firstname-unsupported-characters": "Nombre no puede contener números o caracteres especiales.",
+    "lastname-unsupported-characters": "Apellido no puede contener números o caracteres especiales.",
+    "password-not-match": "Las contraseñas no coinciden, por favor intente de nuevo.",
+    "password-validate-password": "La contraseña debe tener al menos una mayúscula, una minúscula y un número.",
+    "ok": "El usuario ha sido creado exitosamente!"
+  },
+  "form-errors": {
+    "required": "El campo # es requerido.",
+    "password-min-length": "La contraseña debe contener como mínimo 8 caracteres.",
+    "password-max-length": "La contraseña debe contener como máximo 20 caracteres.",
+    "password-not-match": "Las contraseñas deben coincidir",
+    "firstName-min-length": "El nombre debe contener 2 caracteres o más.",
+    "firstName-max-length": "El nombre puede contener un máximo de 60 caracteres.",
+    "lastName-min-length": "El apellido debe contener 2 caracteres o más.",
+    "lastName-max-length": "El apellido puede contener un máximo de 60 caracteres.",
+    "firstName-space-at-beginning": "El nombre no puede iniciar con un espacio.",
+    "lastName-space-at-beginning": "El apellido no puede iniciar con un espacio.",
+    "email": "Ingrese un email valido.",
+    "email-not-match": "El email debe coincidir."
+  },
+  "GeneralMessages": {
+    "successNotificationTitle": "¡Todo salió según lo planeado!",
+    "errorNotificationTitle": "¡Hubo un problema!",
+    "errorNotificationMessage": "Por favor, revisa que los campos requeridos estén completados correctamente."
   }
 }

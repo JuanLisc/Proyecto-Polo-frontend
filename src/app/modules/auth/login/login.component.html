@@ -1,7 +1,7 @@
 <div class="page-background">
   <div align="center">
     <h5 style="margin-top: 15px;">
-      Bienvenido! Introduce tu usuario y contraseña para iniciar sesión
+      {{ 'LoginComponent.title' | translate }}
     </h5>
     <br>
   </div>
@@ -9,12 +9,12 @@
   <div class="login-background">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <mat-form-field class="input" appearance="outline">
-        <mat-label>Email</mat-label>
+        <mat-label>{{ 'LoginComponent.email-field' | translate }}</mat-label>
         <input matInput class="loginInput" type="text" formControlName="email" />
       </mat-form-field>
 
       <mat-form-field class="input" appearance="outline">
-        <mat-label>Contraseña</mat-label>
+        <mat-label>{{ 'LoginComponent.pwd-field' | translate }}</mat-label>
         <input matInput class="loginInput" type="password" formControlName="password" />
       </mat-form-field>
 
@@ -24,9 +24,11 @@
           [disabled]="loginForm.invalid"
           type="submit"
         >
-          Ingresar
+        {{ 'LoginComponent.submit' | translate }}
         </button>
       </div>
+
+      <div *ngIf="error" class="alert alert-danger">{{error}}</div>
     </form>
   </div>
 </div>
