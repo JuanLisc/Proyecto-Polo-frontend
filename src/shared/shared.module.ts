@@ -5,6 +5,7 @@ import { MaterialModule } from './material/material.module';
 import { MatMenuModule } from '@angular/material/menu';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [],
@@ -14,7 +15,8 @@ import { MatButtonModule } from '@angular/material/button';
     MaterialModule,
     MatMenuModule,
     FlexLayoutModule,
-    MatButtonModule
+    MatButtonModule,
+    TranslateModule.forChild()
   ],
   exports: [
     FlexLayoutModule,
