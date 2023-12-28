@@ -1,0 +1,15 @@
+<ng-container *ngIf="error">
+  <ng-container [ngSwitch]="type">
+    <div *ngSwitchCase="'none'" class="error-message">
+      <span>{{error}}</span>
+    </div>
+    <mat-error *ngSwitchCase="'mat'">
+      {{error}}
+    </mat-error>
+    <div *ngSwitchCase="'small'" class="error-message">
+      <small>
+        {{ error }}
+      </small>
+    </div>
+  </ng-container>
+</ng-container>

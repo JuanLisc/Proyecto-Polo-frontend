@@ -1,0 +1,30 @@
+{
+  "UserListComponent": {
+    "title": "Usuarios",
+    "table": {
+      "name": "NOMBRE",
+      "email": "EMAIL",
+      "role": "ROL",
+      "firstName": "NOMBRE",
+      "lastName": "APELLIDO"      
+    },
+    "no-users-created": "Todavía no se ha creado ningún usuario",
+    "user-not-found": "Usuario no encontrado.",
+    "undefined": "Usuario no encontrado.",
+    "new-button": "Crear nuevo usuario"
+  },
+  "NewUserComponent": {
+    "title": "Crear Usuario",
+    "userData": "Datos de Cuenta",
+    "personalData": "Datos personales",
+    "firstName-field": "Nombre",
+    "lastName-field": "Apellido",
+    "role-field": "Rol de usuario",
+    "password-field": "Contraseña",
+    "confirm-password-field": "Confirmar contraseña",
+    "email-field": "Email",
+    "confirmEmail-field": "Confirmar email",
+    "submit": "Crear",
+    "cancel": "Cancelar"
+  }
+}

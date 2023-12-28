@@ -63,4 +63,8 @@ export class AuthService {
     const user: UserEntity = this.getCurrentUser();
     return roles.includes(user.role);
   }
+
+  updateCurrentUser (user: UserEntity): void {
+    localStorage.setItem('user', JSON.stringify(user));
+  }
 }

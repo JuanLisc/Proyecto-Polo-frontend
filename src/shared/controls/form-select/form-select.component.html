@@ -1,1 +1,36 @@
-<p>form-select works!</p>
+<mat-form-field [appearance]="appearance" [ngStyle]="matStyle">
+  <mat-label>
+    <ng-content select="[label-content]"></ng-content>
+    <span *ngIf="requiredLabel" class="special">(*)</span>
+  </mat-label>
+  <mat-select 
+    [multiple]="multiple"
+    (selectionChange)="selectOption($event)"
+    (openedChange)="openChange($event)"
+    [formControl]="formControl"
+    [placeholder]="placeholder"
+    #matSelect
+    [panelClass]="multiple && showSelectAll ? 'app-form-select-all' : ''"
+  >
+    <mat-checkbox
+      *ngIf="multiple && showSelectAll"
+      class="mat-option sel-all-checkbox"
+      [indeterminate]="isIndeterminate()"
+      [checked]="isChecked()"
+      (click)="$event.stopPropagation()"
+      (change)="toggleSelection($event)"
+    >
+      Select All
+    </mat-checkbox>
+    <div class="options-container">
+      <mat-option *ngIf="emptyOption" [value]="emptyOption.value">
+        {{ emptyOption.labelKey | translate }}
+      </mat-option>
+      <mat-option class="test" *ngFor="let element of elements; trackBy: trackByFn" [value]="getValueForOption(element)">
+        <span class="option-label">{{ optionKey? element[optionKey]: element}}</span>
+      </mat-option>
+    </div>
+  </mat-select>
+  <!-- Project content: errors here. -->
+  <ng-content select="[error-content]"></ng-content>
+</mat-form-field>

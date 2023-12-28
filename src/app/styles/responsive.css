@@ -1,0 +1,20 @@
+:root {
+  /* Global small media query */
+  @media (max-width: 860px) {
+    --collapsible-action-bar__expanded-bar__display: none;
+    --collapsible-action-bar__collapsed-bar__display: flex;
+  }
+
+  /* Global medium media query */
+  @media (min-width: 860px) and (max-width: 1280px) {
+    --collapsible-action-bar__expanded-bar__display: none;
+    --collapsible-action-bar__collapsed-bar__display: flex;
+  }
+
+  /* Global large media query */
+  @media (min-width: 1280px) {
+    --collapsible-action-bar__expanded-bar__display: flex;
+    --collapsible-action-bar__collapsed-bar__display: none;
+  }
+  
+}

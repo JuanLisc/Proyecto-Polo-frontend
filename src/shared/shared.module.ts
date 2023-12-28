@@ -6,9 +6,12 @@ import { MatMenuModule } from '@angular/material/menu';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { TranslateModule } from '@ngx-translate/core';
+import { FormErrorsComponent } from './components/form-errors/form-errors.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    FormErrorsComponent
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -21,6 +24,7 @@ import { TranslateModule } from '@ngx-translate/core';
   exports: [
     FlexLayoutModule,
     MaterialModule,
+    TranslateModule
   ]
 })
 export class SharedModule { }

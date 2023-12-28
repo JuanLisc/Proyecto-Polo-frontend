@@ -1,0 +1,126 @@
+<div class="new-user-container" fxLayout="column">
+  <div fxFlex="50%">
+    <h1 class="page-header">{{ 'NewUserComponent.title' | translate }}</h1>
+  </div>
+
+  <div>
+    <form *ngIf="registerForm" [formGroup]="registerForm" fxLayout="column" fxFlex="50">
+      <div fxLayout="column" fxFlex="100" style="margin-top: 3%; width: 100%">
+        <label class="label-title">{{ 'NewUserComponent.personalData' | translate }}</label>
+        <mat-divider class="form-group-divider"></mat-divider>
+        
+        <div fxLayout="row">
+          <div class="input-container" fxFlex="50%" style="width: 100%">
+            <mat-form-field class="input" appearance="outline">
+              <mat-label>{{ 'NewUserComponent.firstName-field' | translate }}</mat-label>
+                <input matInput type="text" autocomplete="off" formControlName="firstName">
+                <app-form-errors
+                  fieldName="{{ 'NewUserComponent.firstName-field' | translate }}"
+                  [control]="registerForm.get('firstName')"
+                >
+                </app-form-errors>
+            </mat-form-field>
+          </div>
+
+          <div class="input-container" fxFlex="50%" style="width: 100%">
+            <mat-form-field class="input" appearance="outline">
+              <mat-label>{{ 'NewUserComponent.lastName-field' | translate }}</mat-label>
+              <input matInput type="text" autocomplete="off" formControlName="lastName">
+              <app-form-errors
+                fieldName="{{ 'NewUserComponent.lastName-field' | translate }}"
+                [control]="registerForm.get('lastName')"
+              >
+              </app-form-errors>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <label class="label-title">{{ 'NewUserComponent.userData' | translate }}</label>
+        <mat-divider class="form-group-divider"></mat-divider>
+
+        <div>
+          <div fxLayout="row">
+            <div class="input-container" fxFlex="50%" style="width: 100%;">
+              <mat-form-field class="input" appearance="outline">
+                <mat-label>{{ 'NewUserComponent.email-field' | translate }}</mat-label>
+                <input matInput type="email" autocomplete="off" formControlName="email">
+                <app-form-errors
+                  error-content fieldName="{{ 'NewUserComponent.email-field' | translate }}"
+                  [control]="registerForm.get('email')"
+                >
+                </app-form-errors>
+              </mat-form-field>
+            </div>
+            <div class="input-container" fxFlex="50%" style="width: 100%">
+              <mat-form-field class="input" appearance="outline">
+                <mat-label>{{ 'NewUserComponent.confirmEmail-field' | translate }}</mat-label>
+                <input matInput type="email" autocomplete="off" formControlName="confirmEmail">
+                <app-form-errors error-content 
+                  fieldName="{{ 'NewUserComponent.confirmEmail-field' | translate }}"
+                  [control]="registerForm.get('confirmEmail')"
+                >
+                </app-form-errors>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div fxLayout="row">
+            <div class="input-container" fxFlex="50%" style="width: 100%">
+              <mat-form-field class="input" appearance="outline">
+                <mat-label>{{ 'NewUserComponent.password-field' | translate }}</mat-label>
+                <input matInput type="password" autocomplete="off" formControlName="password">
+                <app-form-errors
+                  fieldName="{{ 'NewUserComponent.password-field' | translate }}"
+                  [control]="registerForm.get('password')"
+
+                >
+                </app-form-errors>
+              </mat-form-field>
+            </div>
+
+            <div class="input-container" fxFlex="50%" style="width: 100%">
+              <mat-form-field class="input" appearance="outline">
+                <mat-label>{{ 'NewUserComponent.confirm-password-field' | translate }}</mat-label>
+                <input matInput type="password" autocomplete="off" formControlName="confirmPassword">
+                <app-form-errors
+                  fieldName="{{ 'NewUserComponent.confirm-password-field' | translate }}"
+                  [control]="registerForm.get('confirmPassword')"
+
+                >
+                </app-form-errors>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div fxLayout="row">
+            <app-form-select
+              *ngIf="role"
+              [items]="roles"
+              optionKey="label"
+              [formControl]="role"
+            >
+              <mat-label label-content>{{ 'NewUserComponent.role-field' | translate }}</mat-label>
+              <app-form-errors
+                error-content fieldName="{{ 'NewUserComponent.role-field' | translate }}"
+                [control]="registerForm.get('role')"
+              >
+              </app-form-errors>
+            </app-form-select>
+          </div>
+        </div>
+
+        <mat-divider class="form-group-divider"></mat-divider>
+        <div fxLayout="row" fxLayoutAlign="flex-end" fxFlex="50%">
+          <button 
+            stPrimaryBtn
+            (click)="onSubmit()"
+            style="margin-right: 15px;"
+          >
+            {{ 'NewUserComponent.submit' | translate }}
+          </button>
+          <button stGhostBtn (click)='onCancel()'>{{ 'NewUserComponent.cancel' | translate }}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

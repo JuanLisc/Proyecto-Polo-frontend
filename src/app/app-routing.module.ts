@@ -6,7 +6,12 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    children: []
+    children: [
+      {
+        path: 'users',
+        loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule)
+      }
+    ]
   },
   {
     path: 'login',
