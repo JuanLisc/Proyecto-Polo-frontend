@@ -45,7 +45,8 @@ export class LoginComponent implements OnInit {
       .pipe(
         tap((user: UserEntity) => {
           if (user.role === Roles.ADMIN) this.router.navigate(['/users']);
-          else this.router.navigate(['']); // TODO: implementar un authGuard para que haga esto
+          else if (user.role === Roles.USER) this.router.navigate(['/meetings']);
+          else this.router.navigate(['']);
         })
       )
       .subscribe({

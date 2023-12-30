@@ -84,5 +84,22 @@
     "empty-current-password": "Para cambiar la contraseña, debe proporcionar la contraseña actual.",
     "submit": "Guardar cambios",
     "ok": "La informacion ha sido actualizada exitosamente!"
+  },
+  "MeetingListComponent": {
+    "title": "Tus reuniones",
+    "table": {
+      "detail": "DETALLE",
+      "date": "FECHA",
+      "hour": "HORA DEL DIA",
+      "duration": "DURACION",
+      "actions": "ACCIONES" 
+    },
+    "no-meetings-created": "Todavía no se ha creado ninguna reunión",
+    "meeting-not-found": "Reunión no encontrada.",
+    "undefined": "Reunión no encontrada.",
+    "new-button": "Añadir nueva reunión",
+    "delete": {
+      "ok": "La reunión ha sido eliminada exitosamente!"
+    }
   }
 }
