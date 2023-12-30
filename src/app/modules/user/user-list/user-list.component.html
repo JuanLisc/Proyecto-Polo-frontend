@@ -30,6 +30,10 @@
               <th mat-header-cell *matHeaderCellDef>{{ 'UserListComponent.table.role' | translate }}</th>
               <td mat-cell *matCellDef="let user">{{ user.role }}</td>
             </ng-container>
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef>{{ 'UserListComponent.table.actions' | translate }}</th>
+              <td mat-cell *matCellDef="let user"><mat-icon (click)="handleDeleteUser(user.id)">delete</mat-icon></td>
+            </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
             <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>

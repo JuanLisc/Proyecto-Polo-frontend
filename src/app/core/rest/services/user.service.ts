@@ -56,7 +56,7 @@ export class UserService {
       )
   }
 
-  updateUser (id: number, user: UserUpdateDTO): Observable<IUserResponse> {
+  updateUser (id: string, user: UserUpdateDTO): Observable<IUserResponse> {
     return this.http.put<any>(`${this.baseUrl}/${this.USERS}/${id}`, user)
       .pipe(
         map((response) => {

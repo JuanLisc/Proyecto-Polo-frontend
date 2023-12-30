@@ -4,6 +4,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserCreateComponent } from './user-create/user-create.component';
 import { AuthGuard } from '../../../shared/guards/auth.guard';
 import { Roles } from '../../../shared/utils/enums';
+import { UserSettingsComponent } from './user-settings/user-settings.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
     data: {
       role: [Roles.ADMIN]
     }
+  },
+  {
+    path: 'settings',
+    component: UserSettingsComponent
   }
 ];
 

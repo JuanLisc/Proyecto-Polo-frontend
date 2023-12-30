@@ -27,7 +27,7 @@ export class AppComponent {
     if (this.token !== null && this.token !== undefined) {
       this.currentUser = this.authService.getCurrentUser();
 
-      this.router.navigate(['/users']);
+      //this.router.navigate(['/users']);
     } else {
       this.router.navigate(['/login']);
     }  

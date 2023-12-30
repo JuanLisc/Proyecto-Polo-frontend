@@ -14,12 +14,15 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
+import { UserSettingsComponent } from './user-settings/user-settings.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
   declarations: [
     UserListComponent,
-    UserCreateComponent
+    UserCreateComponent,
+    UserSettingsComponent
   ],
   imports: [
     CommonModule,
@@ -34,6 +37,7 @@ import { MatTableModule } from '@angular/material/table';
     MatButtonModule,
     MatFormFieldModule,
     MatTableModule,
+    MatIconModule
   ]
 })
 export class UserModule { }

@@ -13,12 +13,16 @@
       "email": "EMAIL",
       "role": "ROL",
       "firstName": "NOMBRE",
-      "lastName": "APELLIDO"      
+      "lastName": "APELLIDO",
+      "actions": "ACCIONES" 
     },
     "no-users-created": "Todavía no se ha creado ningún usuario",
     "user-not-found": "Usuario no encontrado.",
     "undefined": "Usuario no encontrado.",
-    "new-button": "Crear nuevo usuario"
+    "new-button": "Crear nuevo usuario",
+    "delete": {
+      "ok": "El usuario ha sido eliminado exitosamente!"
+    }
   },
   "NewUserComponent": {
     "title": "Crear Usuario",
@@ -58,5 +62,27 @@
     "successNotificationTitle": "¡Todo salió según lo planeado!",
     "errorNotificationTitle": "¡Hubo un problema!",
     "errorNotificationMessage": "Por favor, revisa que los campos requeridos estén completados correctamente."
+  },
+  "UserSettingsComponent": {
+    "title": "¡Hola, ",
+    "personalData": "Datos Personales",
+    "changePassword": "Cambiar Contraseña",
+    "changeEmail": "Cambiar email",
+    "firstName-field": "Nombre",
+    "lastName-field": "Apellido",
+    "oldPassword-field": "Contraseña actual",
+    "password-field": "Nueva contraseña",
+    "confirm-password-field": "Confirmar contraseña",
+    "email-field": "Email",
+    "confirmEmail-field": "Confirmar email",
+    "confirm-email-empty": "Por favor, confirme el email.",
+    "email-already-in-use": "El email ya se encuentra registrado.",
+    "invalid-current-password": "Contraseña actual incorrecta, intenta de nuevo.",
+    "new-password-not-provided": "No se proporciono una nueva contraseña.",
+    "password-validate-password": "La contraseña debe tener un minimo de 8 caracteres alfanumericos, incluyendo por lo menos una Mayuscula y una Minuscula.",
+    "confirmPassword-validate-password": "La contraseña debe tener un minimo de 8 caracteres alfanumericos, incluyendo por lo menos una Mayuscula y una Minuscula.",
+    "empty-current-password": "Para cambiar la contraseña, debe proporcionar la contraseña actual.",
+    "submit": "Guardar cambios",
+    "ok": "La informacion ha sido actualizada exitosamente!"
   }
 }

@@ -1,0 +1,115 @@
+<div class="user-settings-container" fxLayout="column">
+  <div fxFlex="50%">
+    <h1 *ngIf="currentUser" class="page-header">{{ 'UserSettingsComponent.title' | translate }} {{ currentUser.firstName }}!</h1>
+  </div>
+
+  <div>
+    <div *ngIf="userSettingsForm" [formGroup]="userSettingsForm" fxLayout="column" fxFlex="50">
+      <div fxLayout="column" fxFlex="100" style="margin-top: 3%; width: 100%">
+        <label class="label-title">{{ 'UserSettingsComponent.personalData' | translate }}</label>
+        <mat-divider class="form-group-divider"></mat-divider>
+
+        <div>
+          <div fxLayout="row">
+            <div class="input-container" fxFlex="50%" style="width: 100%">
+              <mat-form-field class="input" appearance="outline">
+                <mat-label>{{ 'UserSettingsComponent.firstName-field' | translate }}</mat-label>
+                <input matInput type="text" autocomplete="off" formControlName="firstName" readonly>
+              </mat-form-field>
+            </div>
+
+            <div class="input-container" fxFlex="50%" style="width: 100%">
+              <mat-form-field class="input" appearance="outline">
+                <mat-label>{{ 'UserSettingsComponent.lastName-field' | translate }}</mat-label>
+                <input matInput type="text" autocomplete="off" formControlName="lastName" readonly>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+        <label class="label-title">{{ 'UserSettingsComponent.changeEmail' | translate }}</label>
+        <mat-divider class="form-group-divider"></mat-divider>
+
+        <div fxLayout="row">
+          <div class="input-container" fxFlex="50%" style="width: 100%">
+            <mat-form-field class="input" appearance="outline">
+              <mat-label>{{ 'UserSettingsComponent.email-field' | translate }}</mat-label>
+              <input matInput type="email" autocomplete="off" formControlName="email">
+              <app-form-errors
+                error-content fieldName="{{ 'UserSettingsComponent.email-field' | translate }}" 
+                [control]="userSettingsForm.get('email')"
+              >
+              </app-form-errors>
+            </mat-form-field>
+          </div>
+
+          <div class="input-container" fxFlex="50%" style="width: 100%">
+            <mat-form-field class="input" appearance="outline">
+              <mat-label>{{ 'UserSettingsComponent.confirmEmail-field' | translate }}</mat-label>
+              <input matInput type="email" autocomplete="off" formControlName="confirmEmail">
+              <app-form-errors error-content 
+                fieldName="{{ 'UserSettingsComponent.confirmEmail-field' | translate }}"
+                [control]="userSettingsForm.get('confirmEmail')"
+                [customErrorMsg]="customConfirmEmailErrorMsgs"
+              >
+              </app-form-errors>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <label class="label-title">{{ 'UserSettingsComponent.changePassword' | translate }}</label>
+        <mat-divider class="form-group-divider"></mat-divider>
+
+        <div fxLayout="row">
+          <div class="input-container" fxFlex="50%" style="width: 100%">
+            <mat-form-field class="input" appearance="outline">
+              <mat-label>{{ 'UserSettingsComponent.oldPassword-field' | translate }}</mat-label>
+              <input matInput type="password" autocomplete="off" formControlName="oldPassword">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div fxLayout="row">
+          <div class="input-container" fxFlex="50%" style="width: 100%">
+            <mat-form-field class="input" appearance="outline">
+              <mat-label>{{ 'UserSettingsComponent.password-field' | translate }}</mat-label>
+              <input matInput type="password" autocomplete="off" formControlName="password">
+              <app-form-errors
+                fieldName="{{ 'UserSettingsComponent.password-field' | translate }}"
+                [control]="userSettingsForm.get('password')"
+                [customErrorMsg]="customPasswordErrorMsgs"
+              >
+              </app-form-errors>
+            </mat-form-field>
+          </div>
+
+          <div class="input-container" fxFlex="50%" style="width: 100%">
+            <mat-form-field class="input" appearance="outline">
+              <mat-label>{{ 'UserSettingsComponent.confirm-password-field' | translate }}</mat-label>
+              <input matInput type="password" autocomplete="off" formControlName="confirmPassword">
+              <app-form-errors
+                fieldName="{{ 'UserSettingsComponent.confirm-password-field' | translate }}"
+                [control]="userSettingsForm.get('confirmPassword')"
+                [customErrorMsg]="customPasswordErrorMsgs"
+              >
+              </app-form-errors>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <mat-divider class="form-group-divider"></mat-divider>
+        <div fxLayout="row" fxLayoutAlign="flex-end" fxFlex="50%">
+          <button 
+            mat-flat-button
+            (click)="onSubmit()"
+            [disabled]='userSettingsForm.invalid || (userSettingsForm.untouched || userSettingsForm.pristine)'
+            style="margin-right: 15px;"
+          >
+            {{ 'UserSettingsComponent.submit' | translate }}
+          </button>
+          <button mat-flat-button (click)='onCancel()'>{{ 'NewUserComponent.cancel' | translate }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
