@@ -1,1 +1,41 @@
-<p>nav-bar works!</p>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav class="sidenav-container" [fixedInViewport]="true" [mode]="'side'" [opened]="true">
+    <mat-nav-list fxLayout="column" fxFlex="100%">
+      <span class="logo-container">
+        <a href="/">
+          <img alt="Agenda Logo" class="logo" src="/assets/img/logo.png">
+        </a>
+      </span>
+
+      <a
+        *ngIf="canAccessUserModule"
+        mat-list-item
+        class="nav-link"
+        [routerLink]="['users']"
+        routerLinkActive="sidebar__nav-link&#45;&#45;active"
+      >
+        <mat-icon>group</mat-icon>
+        <div class="nav-link-text">{{ 'UserListComponent.title' | translate }}</div>
+      </a>
+
+      <a
+        *ngIf="canAccessMeetingModule"
+        mat-list-item
+        class="nav-link"
+        [routerLink]="['meetings']"
+        routerLinkActive="sidebar__nav-link&#45;&#45;active"
+      >
+        <mat-icon>list_alt</mat-icon>
+        <div class="nav-link-text">{{ 'MeetingListComponent.title' | translate }}</div>
+      </a>
+
+      <section class="nav-list-section-footer">
+        <span class="copyright"><mat-icon class="copyright-icon">copyright</mat-icon>2023 Agenda Project</span>
+      </section>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

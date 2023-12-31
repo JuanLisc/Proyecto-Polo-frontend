@@ -49,7 +49,7 @@ export class UserListComponent implements OnInit, OnDestroy {
   handleDeleteUser (userId: string): void {
     const admittedRol = Roles.ADMIN;
     
-    if (!this.authService.checkUserPermissions(admittedRol)) {
+    if (!this.authService.checkUserPermissions([admittedRol])) {
       return;
     }
 

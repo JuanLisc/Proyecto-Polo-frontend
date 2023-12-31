@@ -65,9 +65,9 @@ export class AuthService {
     return localStorage.getItem('token') as string;
   }
 
-  checkUserPermissions (roles: Roles): boolean {
+  checkUserPermissions (roles: Roles[]): boolean {
     const user: UserEntity = this.getCurrentUser();
-    return roles.includes(user.role);
+    return roles.includes(user.role as Roles);
   }
 
   updateCurrentUser (user: UserEntity): void {

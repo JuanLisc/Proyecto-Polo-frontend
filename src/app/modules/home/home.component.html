@@ -1,1 +1,22 @@
-<router-outlet></router-outlet>
+<div class="container-div mat-typography">
+  <ng-container>
+    <app-nav-bar #navList>
+      <ng-container *ngTemplateOutlet="contentBody"></ng-container>
+    </app-nav-bar>
+  </ng-container>
+
+  <ng-template #contentBody>
+    <!-- <mat-toolbar class='header'>
+      <header>
+        <div class='header-container'>
+          <div class='header-right'>
+            <app-user-dropdown></app-user-dropdown>
+          </div>
+        </div>
+      </header>
+    </mat-toolbar> -->
+    <div class="content-body calculated-content-body">
+      <router-outlet></router-outlet>
+    </div>
+  </ng-template>
+</div>
