@@ -16,6 +16,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
 import { UserSettingsComponent } from './user-settings/user-settings.component';
 import { MatIconModule } from '@angular/material/icon';
+import { ButtonModule } from '../../../shared/directives';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatFormFieldModule,
     MatTableModule,
-    MatIconModule
+    MatIconModule,
+    ButtonModule
   ]
 })
 export class UserModule { }

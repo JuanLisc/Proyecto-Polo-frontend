@@ -100,14 +100,14 @@
         <mat-divider class="form-group-divider"></mat-divider>
         <div fxLayout="row" fxLayoutAlign="flex-end" fxFlex="50%">
           <button 
-            mat-flat-button
+            stPrimaryBtn
             (click)="onSubmit()"
             [disabled]='userSettingsForm.invalid || (userSettingsForm.untouched || userSettingsForm.pristine)'
             style="margin-right: 15px;"
           >
             {{ 'UserSettingsComponent.submit' | translate }}
           </button>
-          <button mat-flat-button (click)='onCancel()'>{{ 'NewUserComponent.cancel' | translate }}</button>
+          <button stGhostBtn (click)='onCancel()'>{{ 'NewUserComponent.cancel' | translate }}</button>
         </div>
       </div>
     </div>

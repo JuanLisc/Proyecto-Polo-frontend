@@ -115,7 +115,7 @@
         <mat-divider class="form-group-divider"></mat-divider>
         <div fxLayout="row" fxLayoutAlign="flex-end" fxFlex="50%">
           <button 
-            mat-flat-button
+            stPrimaryBtn
             [disabled]="registerForm.invalid"
             type="submit"
             (click)="onSubmit()"
@@ -123,7 +123,7 @@
           >
             {{ 'UserCreateComponent.submit' | translate }}
           </button>
-          <button mat-flat-button (click)='onCancel()'>{{ 'UserCreateComponent.cancel' | translate }}</button>
+          <button stGhostBtn (click)='onCancel()'>{{ 'UserCreateComponent.cancel' | translate }}</button>
         </div>
       </div>
     </form>

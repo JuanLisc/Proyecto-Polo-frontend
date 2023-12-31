@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @use '@angular/material' as mat;
 @import './app/styles/global';
-//@import '../src/shared/directives/button/button';
+@import '../src/shared/directives/button/button';
 @import "@angular/cdk/overlay-prebuilt.css";
 @import '@angular/material/theming';
 
@@ -144,6 +144,21 @@ $st-typography: mat.define-typography-config(
 
 .actions {
   margin-bottom: 35px;
+}
+
+button:enabled {
+  color: #0e8741;
+  //color: #effef5;
+}
+
+button:hover {
+  background-color: #0dac50;
+  color: #effef5;
+}
+
+button:disabled {
+  background-color: #b7fbd3;
+  color: #0e8741;
 }
 
 html, body { height: 100%; }

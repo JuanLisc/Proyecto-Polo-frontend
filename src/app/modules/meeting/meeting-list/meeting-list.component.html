@@ -1,7 +1,7 @@
 <div class="meetings-list-container">
   <h1 class="page-header">{{ 'MeetingListComponent.title' | translate }}</h1>
   <div fxLayout="row" fxLayoutAlign="space-between center" class="meetings-list-container__options">
-    <button type="button" mat-flat-button (click)="handleNewMeeting()">
+    <button type="button" stPrimaryBtn (click)="handleNewMeeting()">
       {{ 'MeetingListComponent.new-button' | translate }}
     </button>
     <mat-form-field>
@@ -10,8 +10,8 @@
       <mat-datepicker-toggle matIconSuffix [for]="queyDate"></mat-datepicker-toggle>
       <mat-datepicker #queyDate>
         <mat-datepicker-actions>
-          <button mat-button matDatepickerCancel (click)="onCancel()">Cancel</button>
-          <button mat-raised-button color="primary" matDatepickerApply (click)="setDayFilter()">Apply</button>
+          <button stGhostBtn matDatepickerCancel (click)="onCancel()">Cancel</button>
+          <button stPrimaryBtn color="primary" matDatepickerApply (click)="setDayFilter()">Apply</button>
         </mat-datepicker-actions>
       </mat-datepicker>
     </mat-form-field>

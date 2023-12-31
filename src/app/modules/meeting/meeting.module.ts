@@ -17,6 +17,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
+import { ButtonModule } from '../../../shared/directives';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { MatInputModule } from '@angular/material/input';
     MatDividerModule,
     MatFormFieldModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    ButtonModule
   ]
 })
 export class MeetingModule { }

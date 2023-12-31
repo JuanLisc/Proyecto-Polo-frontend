@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { TranslateModule } from '@ngx-translate/core';
+import { ButtonModule } from '../../../shared/directives';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TranslateModule } from '@ngx-translate/core';
     MatFormFieldModule,
     MatButtonModule,
     MatCheckboxModule,
-    TranslateModule.forChild()
+    TranslateModule.forChild(),
+    ButtonModule
   ]
 })
 export class AuthModule { }

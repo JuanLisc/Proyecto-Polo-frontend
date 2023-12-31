@@ -7,6 +7,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormErrorsComponent } from './components/form-errors/form-errors.component';
+import { ButtonModule } from './directives';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormErrorsComponent } from './components/form-errors/form-errors.compon
     MatMenuModule,
     FlexLayoutModule,
     MatButtonModule,
-    TranslateModule.forChild()
+    TranslateModule.forChild(),
+    ButtonModule
   ],
   exports: [
     FlexLayoutModule,

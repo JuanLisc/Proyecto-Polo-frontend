@@ -1,0 +1,162 @@
+@import "../../../app/styles/ng-variables";
+@import "../../../app/styles/fonts";
+
+.st-button {
+  min-width: 100px;
+  height: 44px;
+  @include font-base();
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 0 40px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+
+  &[disabled] {
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &[large] {
+    @include font-large();
+
+    height: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+button[stPrimaryBtn] {
+  background-color: $st-blue;
+  color: $white;
+  border-color: $st-blue;
+
+  &:hover {
+    background-color: $st-blue-600;
+    border-color: $st-blue-600;
+  }
+
+  &:focus, &:active {
+    background-color: $st-blue-600;
+    border-color: $st-blue-600;
+    box-shadow: 0 0 3px 2px rgb(70, 186, 253);
+  }
+
+  &[disabled] {
+    background-color: rgba($st-blue, 0.5);
+    border-color: transparent;
+    color: $white;
+  }
+
+  &[shadow] {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+
+    &:active, &:focus {
+      box-shadow: 0 0 3px 2px rgb(70, 186, 253);
+    }
+  }
+
+  &[danger] {
+    background-color: $st-red;
+    border-color: $st-red;
+
+    &:focus, &:active {
+      background-color: $st-red-100;
+      border-color: $st-red-100;
+      box-shadow: 0 0 3px 2px rgb(255, 125, 125);
+    }
+  }
+}
+
+button[stSecondaryBtn] {
+  background-color: $white;
+  color: $st-blue;
+  border-color: $st-grey-100;
+
+  &:hover {
+    border-color: $st-blue;
+  }
+
+  &:active, &:focus {
+    border-color: $st-blue;
+    box-shadow: 0 0 3px 2px rgb(70, 186, 253);
+  }
+
+  &[disabled] {
+    background-color: $white;
+    color: rgba($st-blue, 0.5);
+    border-color: rgba($st-grey-100, 0.5);
+  }
+
+  &[shadow] {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+
+    &:active, &:focus {
+      box-shadow: 0 0 3px 2px rgb(70, 186, 253);
+    }
+  }
+}
+
+button[stGhostBtn] {
+  background-color: $white;
+  color: $st-blue;
+  border-color: $st-blue;
+
+  &:hover {
+    background-color: $st-blue;
+    color: $white;
+  }
+
+  &:active, &:focus {
+    background-color: $st-blue;
+    color: $white;
+    box-shadow: 0 0 3px 2px rgb(70, 186, 253);
+  }
+
+  &[disabled] {
+    background-color: $white;
+    color: rgba($st-blue, 0.5);
+    border-color: rgba($st-blue, 0.5);
+  }
+
+  &[shadow] {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+
+    &:active, &:focus {
+      box-shadow: 0 0 3px 2px rgb(70, 186, 253);
+    }
+  }
+}
+
+button[stLinkBtn] {
+  background-color: $white;
+  color: $st-black;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  &:hover {
+    color: $st-grey-600 !important;
+  }
+
+  &:active, &:focus {
+    background-color: $st-grey-100;
+    color: $st-grey-600;
+    box-shadow: 0 0 3px 2px rgb(70, 186, 253);
+  }
+
+  &[disabled] {
+    background-color: $white;
+    opacity: 0.5;
+  }
+}
+
+button[stIconBtn] {
+  display: flex;
+  color: $st-blue;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}

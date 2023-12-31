@@ -13,6 +13,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AuthInterceptor } from '../shared/http-interceptors/auth.interceptor';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { ButtonModule } from '../shared/directives';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     }),
     ToastrModule.forRoot(),
     MatNativeDateModule,
-    MatToolbarModule
+    MatToolbarModule,
+    ButtonModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
