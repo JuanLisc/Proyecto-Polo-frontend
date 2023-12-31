@@ -14,6 +14,7 @@ import { AuthInterceptor } from '../shared/http-interceptors/auth.interceptor';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ButtonModule } from '../shared/directives';
+import { UserDropdownModule } from '../shared/modules/user-dropdown/user-dropdown.module';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ButtonModule } from '../shared/directives';
     ToastrModule.forRoot(),
     MatNativeDateModule,
     MatToolbarModule,
-    ButtonModule
+    ButtonModule,
+    UserDropdownModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }

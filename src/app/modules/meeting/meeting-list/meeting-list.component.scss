@@ -2,6 +2,7 @@
 @import '../../../styles/fonts';
 @import '../../../styles/pills';
 @import '../../../styles/table';
+@import '../../../styles/datepicker.scss';
 
 $content-left-margin: 30px;
 
@@ -129,4 +130,8 @@ $content-left-margin: 30px;
 .responsive-table-container {
   @include table-container-base-styles(1200px);
   min-height: 520px;
+}
+
+::ng-deep .mdc-data-table__header{
+  color: green;
 }

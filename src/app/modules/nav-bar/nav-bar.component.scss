@@ -1,15 +1,15 @@
 @import '../../styles/ng-variables';
 
 .sidenav-container {
-  background-color: $st-black;
+  background-color: $st-blue-600;
   width: 200px;
 }
 
 .nav-link {
-  color: $st-grey-100 !important;
+  color: $st-blue-400 !important;
   transition: background .2s ease;
   &:hover, &:focus {
-    background: rgba(255,255,255,.15);
+    background: $st-blue-400;
   }
 }
 
@@ -20,7 +20,7 @@
 }
 
 .sidebar__nav-link--active {
-  background: rgba(255,255,255,.15);
+  background: $st-blue-400;
   color: $white !important;
   width: 100%;
 }

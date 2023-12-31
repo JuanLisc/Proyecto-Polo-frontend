@@ -18,6 +18,14 @@
         <input matInput class="loginInput" type="password" formControlName="password" />
       </mat-form-field>
 
+      <mat-checkbox
+        formControlName="keepSessionOpen"
+        style="display: inline-flex;"
+        [color]="color"
+      >
+        <mat-label style=" font-size: medium;">{{ 'LoginComponent.keep-session-open' | translate }}</mat-label>
+      </mat-checkbox>
+
       <div fxLayout="row" fxLayoutAlign="flex-end" class="actions">
         <button
           stPrimaryBtn

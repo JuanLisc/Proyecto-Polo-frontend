@@ -10,8 +10,8 @@
       <mat-datepicker-toggle matIconSuffix [for]="queyDate"></mat-datepicker-toggle>
       <mat-datepicker #queyDate>
         <mat-datepicker-actions>
-          <button stGhostBtn matDatepickerCancel (click)="onCancel()">Cancel</button>
           <button stPrimaryBtn color="primary" matDatepickerApply (click)="setDayFilter()">Apply</button>
+          <button stGhostBtn matDatepickerCancel (click)="onCancel()">Cancel</button>
         </mat-datepicker-actions>
       </mat-datepicker>
     </mat-form-field>
@@ -31,7 +31,7 @@
             </ng-container>
             <ng-container matColumnDef="date">
               <th mat-header-cell *matHeaderCellDef>{{ 'MeetingListComponent.table.date' | translate }}</th>
-              <td mat-cell *matCellDef="let meeting">{{ formatDate(meeting.date) }}</td>
+              <td mat-cell *matCellDef="let meeting">{{ meeting.date }}</td>
             </ng-container>
             <ng-container matColumnDef="hour">
               <th mat-header-cell *matHeaderCellDef>{{ 'MeetingListComponent.table.hour' | translate }}</th>

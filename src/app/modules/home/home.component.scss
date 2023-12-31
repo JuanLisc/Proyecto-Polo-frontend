@@ -14,11 +14,12 @@ $regular-content-body-height: calc(100vh - #{$base-height});
 .calculated-content-body {
   height: $regular-content-body-height;
   padding: $content-body-padding;
+  background-color: $st-blue-50;
 }
 
 .header {
-  background: $st-grey-100;
-  border-bottom: $header-width-border-bottom darken($st-grey-100, 15%) solid;
+  background: $st-blue-100;
+  border-bottom: $header-width-border-bottom darken($st-blue-200, 15%) solid;
   z-index: 10;
 }
 
@@ -49,4 +50,18 @@ mat-toolbar {
 .calculated-content-body {
   height: $regular-content-body-height;
   padding: $content-body-padding;
+}
+
+::ng-deep .mdc-notched-outline__leading {
+  border-color: $st-blue-400 !important;
+}
+::ng-deep .mdc-notched-outline__notch {
+  border-color: $st-blue-400 !important;
+}
+::ng-deep .mdc-notched-outline__trailing {
+  border-color: $st-blue-400 !important;
+}
+
+::ng-deep .mdc-text-field--invalid .mdc-notched-outline > * {
+  border-color: red !important;
 }

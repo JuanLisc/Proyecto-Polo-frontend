@@ -5,6 +5,7 @@ import { AuthService } from '../../../core/rest/services/auth.service';
 import { noop, tap } from 'rxjs';
 import { UserEntity } from '../../../core/models/user-entity.model';
 import { Roles } from '../../../../shared/utils/enums';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,7 @@ import { Roles } from '../../../../shared/utils/enums';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   error = '';
+  color: ThemePalette = 'warn';
 
   constructor (
     private readonly router: Router,
@@ -33,6 +35,9 @@ export class LoginComponent implements OnInit {
       password: new FormControl('', {
         validators: [Validators.required],
         updateOn: 'change'
+      }),
+      keepSessionOpen: new FormControl(false, {
+        updateOn: 'change'
       })
     });
   }
@@ -40,7 +45,8 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     this.authService.login(
       this.loginForm.controls['email'].value,
-      this.loginForm.controls['password'].value
+      this.loginForm.controls['password'].value,
+      this.loginForm.controls['keepSessionOpen'].value
     )
       .pipe(
         tap((user: UserEntity) => {

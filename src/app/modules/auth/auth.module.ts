@@ -23,7 +23,8 @@ import { ButtonModule } from '../../../shared/directives';
     MatButtonModule,
     MatCheckboxModule,
     TranslateModule.forChild(),
-    ButtonModule
+    ButtonModule,
+    MatCheckboxModule
   ]
 })
 export class AuthModule { }

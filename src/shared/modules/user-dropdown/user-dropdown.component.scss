@@ -12,8 +12,8 @@
 
   .user-dropdown-button {
     border: 0;
-    color: $st-grey-700;
-    background-color: $st-grey-100;
+    color: $st-blue-600;
+    background-color: $st-blue-100;
     width: 62px;
     height: 62px;
     border-radius: 4px;
@@ -22,7 +22,7 @@
 
     &:hover, &:focus {
       cursor: pointer;
-      background-color: $st-grey-200;
+      background-color: $st-blue-200;
     }
 
     &:focus {
@@ -31,7 +31,11 @@
   }
 }
 
-.action-menu {
+.test {
+  background-color: $st-blue-600;
+}
+
+/* .action-menu {
   position: absolute;
   top: 64px;
   right: 2px;
@@ -109,4 +113,6 @@
   .nav-link-text {
     padding-top: 8px;
   }
-}
+
+  
+} */

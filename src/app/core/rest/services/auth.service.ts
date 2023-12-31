@@ -22,15 +22,15 @@ export class AuthService {
     private readonly notificationService: NotificationService
   ) {}
 
-  login (email: string, password: string): Observable<any> {
+  login (email: string, password: string, keepSessionOpen: boolean): Observable<any> {
     return this.http.post(`${this.baseUrl}/${this.AUTH}/login`, { email, password })
       .pipe(
         map((response: any) => {
           this.token = response.data.token;
           this.currentUser = response.data.result;
 
-          localStorage.setItem('user', JSON.stringify(this.currentUser));
-          localStorage.setItem('token', this.token);
+          sessionStorage.setItem('firstLogin', 'true');
+          this.storeUserData(keepSessionOpen, response.data.result, response.data.token);
 
           return this.currentUser;
         }),
@@ -48,8 +48,11 @@ export class AuthService {
     if (this.isLoggedIn()) {
       localStorage.removeItem('user');
       localStorage.removeItem('token');
+    } else {
+      sessionStorage.removeItem('user');
+      sessionStorage.removeItem('token');
     }
-
+    sessionStorage.removeItem('firstLogin');
     this.router.navigate(['/login']);
   }
 
@@ -58,11 +61,15 @@ export class AuthService {
   }
 
   getCurrentUser (): UserEntity {
-    return JSON.parse(localStorage.getItem('user') as string);
+    return this.isLoggedIn()
+      ? JSON.parse(localStorage.getItem('user') as string)
+      : JSON.parse(sessionStorage.getItem('user') as string);
   }
 
   getCurrentToken (): string {
-    return localStorage.getItem('token') as string;
+    return this.isLoggedIn()
+      ? localStorage.getItem('token') as string
+      : sessionStorage.getItem('token') as string;
   }
 
   checkUserPermissions (roles: Roles[]): boolean {
@@ -71,6 +78,20 @@ export class AuthService {
   }
 
   updateCurrentUser (user: UserEntity): void {
-    localStorage.setItem('user', JSON.stringify(user));
+    if (this.isLoggedIn()) {
+      localStorage.setItem('user', JSON.stringify(user));
+    } else {
+      sessionStorage.setItem('user', JSON.stringify(user));
+    }
+  }
+
+  storeUserData (keepSessionOpen: boolean, user: UserEntity, token: string): void {
+    if (keepSessionOpen) {
+      localStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem('token', token);
+    } else {
+      sessionStorage.setItem('user', JSON.stringify(user));
+      sessionStorage.setItem('token', token);
+    }
   }
 }

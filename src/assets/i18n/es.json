@@ -4,7 +4,8 @@
     "email-field": "Email",
     "pwd-field": "Contraseña",
     "submit": "Ingresar",
-    "incorrect-data": "Nombre de usuario y/o contraseña incorrectos."
+    "incorrect-data": "Nombre de usuario y/o contraseña incorrectos.",
+    "keep-session-open": "Mantener la sesión iniciada"
   },
   "UserListComponent": {
     "title": "Usuarios",
@@ -83,7 +84,8 @@
     "confirmPassword-validate-password": "La contraseña debe tener un minimo de 8 caracteres alfanumericos, incluyendo por lo menos una Mayuscula y una Minuscula.",
     "empty-current-password": "Para cambiar la contraseña, debe proporcionar la contraseña actual.",
     "submit": "Guardar cambios",
-    "ok": "La informacion ha sido actualizada exitosamente!"
+    "ok": "La informacion ha sido actualizada exitosamente!",
+    "cancel": "Cancelar"
   },
   "MeetingListComponent": {
     "title": "Tus reuniones",
@@ -118,5 +120,9 @@
     "date-is-date": "No es un formato de fecha válido",
     "no-available-times": "El horario ya se encuentra ocupado o se superpone con otra reunión",
     "limit-reached": "Puedes tener un máximo de 20 reuniones activas. No te olvides de ir borrándolas!"
+  },
+  "UserDropdownComponent": {
+    "account-settings": "Configuración",
+    "logout": "Cerrar sesión"
   }
 }

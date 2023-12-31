@@ -16,11 +16,13 @@
     </div>
   </mat-menu> -->
 
-  <mat-menu #appMenu="matMenu">
-    <span class="user-name">{{ currentUserFullName }}</span>
-    <span class="user-company-name"> Agenda</span>
-    <button mat-menu-item class="nav-link" (click)="goToSettings()">{{ 'UserDropdownComponent.account-settings' | translate }}</button>
-    <button mat-menu-item (click)="logout()">{{ 'UserDropdownComponent.logout' | translate }}</button>
+  <mat-menu #appMenu="matMenu" class="matMenu">
+    <div class="test">
+      <span class="user-name">{{ currentUserFullName }}</span>
+      <span class="user-company-name"> Agenda</span>
+      <button mat-menu-item class="nav-link" (click)="goToSettings()">{{ 'UserDropdownComponent.account-settings' | translate }}</button>
+      <button mat-menu-item (click)="logout()">{{ 'UserDropdownComponent.logout' | translate }}</button>
+    </div>
   </mat-menu>
   
   <button mat-icon-button class="user-dropdown-button" [matMenuTriggerFor]="appMenu">

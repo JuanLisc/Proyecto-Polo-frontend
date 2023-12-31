@@ -6,7 +6,7 @@ import { NotificationService } from '../../../../shared/services/notification.se
 import { MatDialog } from '@angular/material/dialog';
 import { MeetingCreateComponent } from '../meeting-create/meeting-create.component';
 import { FormControl } from '@angular/forms';
-import { format } from 'date-fns';
+import { format, setHours } from 'date-fns';
 
 @Component({
   selector: 'app-meeting-list',
@@ -89,8 +89,10 @@ export class MeetingListComponent implements OnInit, OnDestroy {
 		this.getMeetings(this.queryDateControl.value);
 	}
 
-  formatDate (date: Date): string {
-    return format(date, 'dd-MM-yyyy');
+  //TODO: no formatea bien la fecha, le resta un dia.
+  formatDate (date: Date, hour: number): string {
+    setHours(date, hour)
+    return format(new Date(date), 'Pp');
   }
 
 	onCancel (): void {

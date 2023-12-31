@@ -1,0 +1,25 @@
+@import './ng-variables.scss';
+
+::ng-deep .mat-calendar{
+  background: $st-blue-50;
+}
+
+::ng-deep .mat-calendar-body-label {
+  color: $st-blue-400;
+}
+
+::ng-deep .mat-calendar-body-cell-content {
+  color: $st-blue-400;
+}
+
+::ng-deep .mat-calendar-table-header {
+  color: $st-blue-400;
+
+  &::after {
+    color: $st-blue-600;
+  }
+}
+
+::ng-deep .mat-datepicker-actions ng-star-inserted {
+  background: $st-blue-50;
+}
