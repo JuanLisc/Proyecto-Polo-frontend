@@ -2,8 +2,10 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MeetingEntity } from '../../../core/models/meeting-entity.model';
 import { Subscription, noop, tap } from 'rxjs';
 import { MeetingService } from '../../../core/rest/services/meeting.service';
-import { Router } from '@angular/router';
 import { NotificationService } from '../../../../shared/services/notification.service';
+import { MatDialog } from '@angular/material/dialog';
+import { MeetingCreateComponent } from '../meeting-create/meeting-create.component';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-meeting-list',
@@ -15,19 +17,26 @@ export class MeetingListComponent implements OnInit, OnDestroy {
   sub!: Subscription;
   errorMessage!: string;
 	columnsToDisplay = ['detail', 'date', 'hour', 'duration', 'actions'];
+	queryDateControl = new FormControl();
+	meetingModalConfig = {
+    hasBackdrop: true,
+    backdropClass: 'st-dialog-backdrop',
+    width: `${Math.min(window.innerWidth / 2, 500)}px`,
+    borderRadius: '50%'
+  };
 
   constructor (
     private readonly meetingService: MeetingService,
-    private readonly router: Router,
-    private readonly notificationService: NotificationService
+    private readonly notificationService: NotificationService,
+		private readonly matDialog: MatDialog
   ) {}
 
   ngOnInit(): void {
-    this.sub = this.getMeetings();
+    this.sub = this.getMeetings(this.queryDateControl.value);
   }
 
-  getMeetings (): Subscription {
-    return this.meetingService.getMeetings().pipe(
+  getMeetings (queryDate?: Date): Subscription {
+    return this.meetingService.getMeetings(queryDate).pipe(
       tap(data => {
         this.meetingsList = data
       })
@@ -39,7 +48,19 @@ export class MeetingListComponent implements OnInit, OnDestroy {
   }
 
 	handleNewMeeting (): void {
-    this.router.navigate(['meetings', 'create']);
+    this.matDialog
+			.open(
+				MeetingCreateComponent,
+				this.meetingModalConfig
+			)
+			.afterClosed()
+			.pipe(
+				tap(value => {
+					if (value) this.getMeetings();
+				})
+			)
+			.subscribe();
+		//this.router.navigate(['meetings', 'create']);
   }
 
   handleDeleteMeeting (meetingId: number): void {
@@ -63,6 +84,14 @@ export class MeetingListComponent implements OnInit, OnDestroy {
         }
       })
   }
+
+	setDayFilter (): void {
+		this.getMeetings(this.queryDateControl.value);
+	}
+
+	onCancel (): void {
+		this.getMeetings();
+	}
 
   ngOnDestroy(): void {
 		this.sub.unsubscribe();

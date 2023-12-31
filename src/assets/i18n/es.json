@@ -24,7 +24,7 @@
       "ok": "El usuario ha sido eliminado exitosamente!"
     }
   },
-  "NewUserComponent": {
+  "UserCreateComponent": {
     "title": "Crear Usuario",
     "userData": "Datos de Cuenta",
     "personalData": "Datos personales",
@@ -101,5 +101,22 @@
     "delete": {
       "ok": "La reunión ha sido eliminada exitosamente!"
     }
+  },
+  "MeetingCreateComponent": {
+    "title": "Añade una nueva reunión!",
+    "description": "Brindanos una breve descripción",
+    "detail-field": "Detalle",
+    "detail-field-placeholder": "Con quién te reunís? De qué trata la reunión?",
+    "datepick": "Elige una fecha, horario y duración",
+    "date-field": "Fecha",
+    "hour-field": "Hora del dia",
+    "duration-field": "Duración",
+    "submit": "Añadir",
+    "cancel": "Cancelar",
+    "ok": "La reunión se ha añadido exitosamente!",
+    "not-weekday": "Las reuniones solo pueden ser en días de semana",
+    "date-is-date": "No es un formato de fecha válido",
+    "no-available-times": "El horario ya se encuentra ocupado o se superpone con otra reunión",
+    "limit-reached": "Puedes tener un máximo de 20 reuniones activas. No te olvides de ir borrándolas!"
   }
 }

@@ -4,6 +4,17 @@
     <button type="button" mat-flat-button (click)="handleNewMeeting()">
       {{ 'MeetingListComponent.new-button' | translate }}
     </button>
+    <mat-form-field>
+      <mat-label>Filtrar por día</mat-label>
+      <input matInput [matDatepicker]="queyDate" [formControl]="queryDateControl">
+      <mat-datepicker-toggle matIconSuffix [for]="queyDate"></mat-datepicker-toggle>
+      <mat-datepicker #queyDate>
+        <mat-datepicker-actions>
+          <button mat-button matDatepickerCancel (click)="onCancel()">Cancel</button>
+          <button mat-raised-button color="primary" matDatepickerApply (click)="setDayFilter()">Apply</button>
+        </mat-datepicker-actions>
+      </mat-datepicker>
+    </mat-form-field>
   </div>
   <div fxLayout="row">
     <div fxFlex>

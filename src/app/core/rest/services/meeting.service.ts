@@ -24,8 +24,12 @@ export class MeetingService {
     private readonly http: HttpClient
   ) {}
 
-  getMeetings (): Observable<MeetingEntity[]> {
-    return this.http.get<any>(`${this.baseUrl}/${this.MEETINGS}`)
+  getMeetings (queryDate?: Date): Observable<MeetingEntity[]> {
+    const url = queryDate
+      ? `${this.baseUrl}/${this.MEETINGS}?date=${queryDate}`
+      : `${this.baseUrl}/${this.MEETINGS}`
+      
+    return this.http.get<any>(url)
       .pipe(
         map(response => response.data.result),
         catchError(err => throwError(() => new Error(err)))

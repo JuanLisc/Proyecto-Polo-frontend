@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { noop, tap } from 'rxjs';
 import { Roles } from '../../../../shared/utils/enums';
 import { NotificationService } from '../../../../shared/services/notification.service';
+import { AuthService } from '../../../core/rest/services/auth.service';
 
 @Component({
   selector: 'app-user-create',
@@ -15,6 +16,7 @@ export class UserCreateComponent implements OnInit {
   registerForm!: FormGroup;
   errorMessage = '';
   roles = Object.values(Roles);
+  loggedUser = this.authService.getCurrentUser();
 
   customFirstNameErrorMsgs = [
     {
@@ -83,7 +85,8 @@ export class UserCreateComponent implements OnInit {
     private readonly formBuilder: FormBuilder,
     private readonly userService: UserService,
     private readonly router: Router,
-    private readonly notificationService: NotificationService
+    private readonly notificationService: NotificationService,
+    private readonly authService: AuthService
   ) {}
 
   buildRegisterForm (): void {
@@ -135,7 +138,6 @@ export class UserCreateComponent implements OnInit {
         updateOn: 'change'
       }),
       role: new FormControl('', {
-        validators: [Validators.required],
         updateOn: 'change'
       })
     });
@@ -243,7 +245,7 @@ export class UserCreateComponent implements OnInit {
         tap(result => {
           this.notificationService.successNotification(
             'GeneralMessages.successNotificationTitle',
-            'NewUserComponent.' + result.resultKeys
+            'UserCreateComponent.' + result.resultKeys
           );
           this.router.navigate(['/users']);
         })
@@ -251,7 +253,7 @@ export class UserCreateComponent implements OnInit {
       .subscribe({
         next: noop,
         error: (err) => {
-          this.notificationService.showErrorNotification('NewUserComponent', err.error.resultKeys);
+          this.notificationService.showErrorNotification('UserCreateComponent', err.error.resultKeys);
         }
       })
   }

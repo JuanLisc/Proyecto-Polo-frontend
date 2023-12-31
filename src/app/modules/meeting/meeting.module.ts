@@ -10,11 +10,19 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MaterialModule } from '../../../shared/material/material.module';
+import { MeetingCreateComponent } from './meeting-create/meeting-create.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
   declarations: [
-    MeetingListComponent
+    MeetingListComponent,
+    MeetingCreateComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +33,13 @@ import { MaterialModule } from '../../../shared/material/material.module';
     MatButtonModule,
     MatTableModule,
     MatIconModule,
-    MaterialModule
+    MaterialModule,
+    MatDatepickerModule,
+    ReactiveFormsModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatInputModule
   ]
 })
 export class MeetingModule { }

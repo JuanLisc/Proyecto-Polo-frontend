@@ -1,0 +1,95 @@
+<div class="new-meeting-container" fxLayout="column">
+  <div>
+    <form *ngIf="createMeetingForm" [formGroup]="createMeetingForm" fxLayout="column" fxFlex="50">
+      <div fxLayout="column" fxFlex="100" style="margin-top: 3%; width: 100%">
+        <label class="label-title">{{ 'MeetingCreateComponent.description' | translate }}</label>
+        <mat-divider class="form-group-divider"></mat-divider>
+        
+        <div fxLayout="row">
+          <div class="input-container" fxFlex="50%" style="width: 100%">
+            <mat-form-field class="input" appearance="outline">
+              <mat-label>{{ 'MeetingCreateComponent.detail-field' | translate }}</mat-label>
+                <input 
+                  matInput
+                  type="text"
+                  autocomplete="off"
+                  formControlName="detail" 
+                  placeholder="{{ 'MeetingCreateComponent.detail-field-placeholder' | translate }}">
+                <app-form-errors
+                  fieldName="{{ 'MeetingCreateComponent.detail-field' | translate }}"
+                  [control]="createMeetingForm.get('detail')"
+                >
+                </app-form-errors>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <label class="label-title">{{ 'MeetingCreateComponent.datepick' | translate }}</label>
+        <mat-divider class="form-group-divider"></mat-divider>
+
+        <div>
+          <div fxLayout="row">
+            <div class="input-container" fxFlex="50%" style="width: 100%">
+              <mat-form-field>
+                <mat-label>{{ 'MeetingCreateComponent.date-field' | translate }}</mat-label>
+                <input matInput [matDatepicker]="date" formControlName="date">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="date"></mat-datepicker-toggle>
+                <mat-datepicker #date>
+                  <mat-datepicker-actions>
+                    <button mat-button matDatepickerCancel>Cancel</button>
+                    <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                  </mat-datepicker-actions>
+                </mat-datepicker>
+                <app-form-errors
+                  fieldName="{{ 'MeetingCreateComponent.date-field' | translate }}"
+                  [control]="createMeetingForm.get('date')"
+                >
+                </app-form-errors>
+              </mat-form-field>
+            </div>
+            <div class="input-container" fxFlex="50%" style="width: 100%">
+              <mat-form-field class="input" appearance="outline">
+                <mat-label>{{ 'MeetingCreateComponent.hour-field' | translate }}</mat-label>
+                <input matInput type="number" min="8" max="21" autocomplete="off" formControlName="hour">
+                <app-form-errors error-content 
+                  fieldName="{{ 'MeetingCreateComponent.hour-field' | translate }}"
+                  [control]="createMeetingForm.get('hour')"
+                >
+                </app-form-errors>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div fxLayout="row">
+            <div class="input-container" fxFlex="50%" style="width: 100%">
+              <mat-form-field class="input" appearance="outline">
+                <mat-label>{{ 'MeetingCreateComponent.duration-field' | translate }}</mat-label>
+                <input matInput type="number" min="1" max="10" autocomplete="off" formControlName="duration">
+                <app-form-errors
+                  fieldName="{{ 'MeetingCreateComponent.duration-field' | translate }}"
+                  [control]="createMeetingForm.get('duration')"
+                >
+                </app-form-errors>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+        <mat-divider class="form-group-divider"></mat-divider>
+        <div fxLayout="row" fxLayoutAlign="flex-end" fxFlex="50%">
+          <button 
+            mat-flat-button
+            [disabled]="createMeetingForm.invalid"
+            type="submit"
+            (click)="onSubmit()"
+            style="margin-right: 15px;"
+          >
+            {{ 'MeetingCreateComponent.submit' | translate }}
+          </button>
+          <button mat-flat-button (click)='onCancel()'>{{ 'MeetingCreateComponent.cancel' | translate }}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
