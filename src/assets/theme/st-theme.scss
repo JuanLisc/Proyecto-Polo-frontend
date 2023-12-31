@@ -1,0 +1,15 @@
+@use '@angular/material' as mat;
+@import './st-theme-variables';
+
+$st-theme-primary: mat.define-palette($st-blue);
+$st-theme-accent: mat.define-palette($st-green);
+$st-theme-warn: mat.define-palette(mat.$red-palette);
+$st-theme-background: mat.define-palette($st-blue);
+
+$st-theme: mat.define-light-theme((
+  color: (
+    primary: $st-theme-primary,
+    accent: $st-theme-accent,
+    warm: $st-theme-accent
+  )
+));

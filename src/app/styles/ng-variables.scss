@@ -1,0 +1,110 @@
+@use '@angular/material' as mat;
+
+//Primary Colors
+$white: #fff;
+$st-black: #282828;
+
+$st-blue: (
+  50: #ebf2f9,
+  100: #c7e4f4,
+  400: #2690d0,
+  600: #0369b0,
+  A100: #7faedd,
+  A200: #7faedd,
+  A400: #7faedd,
+  A700: #7faedd,
+  contrast: (
+    50: white,
+    100: white,
+    200: white,
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: white,
+    A200: white,
+    A400: white,
+    A700: white,
+  ),
+);
+
+$app-primary-palette: mat.define-palette($st-blue, 400, 50, 600);
+$app-accent-palette: mat.define-palette($st-blue, A200, A100, A400);
+
+$primary: mat.get-color-from-palette($app-primary-palette);
+$accent: mat.get-color-from-palette($app-accent-palette);
+
+$dark-primary: $app-primary-palette;
+$dark-accent: mat.define-palette(mat.$amber-palette, A400, A100, A700);
+
+$st-blue: #0272b4;
+
+$st-blue-50: #ebf2f9;
+$st-blue-100: #c7e4f4;
+$st-blue-200: #a3d1f4;
+$st-blue-400: #2690d0;
+$st-blue-600: #0369b0;
+$st-blue-light: #7DAEDB;
+
+$st-grey-700: #3E3E3E;
+$st-grey-600: #606060;
+$st-grey-500: #999999;
+$st-grey-400: #979797;
+$st-grey-300: #D8D8D8;
+$st-grey-200: #D3D3D3;
+$st-grey-100: #E6E6E6;
+$st-grey-50: #F0F0F0;
+$st-light-grey: #f8f8f8;
+
+//Secondary Colors
+$st-accent-green: #438446;
+
+$st-bright-green: #90ee90;
+
+$st-less-bright-green: #DDF1DD;
+
+$st-red: #D93E22;
+$st-red-50: #FFDCDC;
+$st-red-100: #D93D22;
+$st-red-600: #c8391f;
+
+$st-yellow: #fcba00;
+
+$st-orange: #ff9522;
+
+//Specialty Colors
+$utest-teal: #00a2c7;
+
+//Font Sizes
+$st-font-size-xs: 12px;
+$st-font-size-sm: 14px;
+$st-font-size-base: 16px;
+$st-font-size-md: 18px;
+$st-font-size-lg: 20px;
+$st-font-size-xl: 24px;
+$st-font-size-xxl: 34px;
+$st-font-size-xxxl: 56px;
+
+//Font Weights
+$st-font-weight-light: 300;
+$st-font-weight-regular: 400;
+$st-font-weight-medium: 500;
+
+$pw-border-width: 2px;
+$pw-border-color: #e2e0e0;
+$pw-border-radius: 5px;
+
+$pw-input-width: 400px;
+$pw-cascading-input-width: 226px;
+$pw-input-height: 42px;
+
+$pw-highlight-blue: #e6f2f9;
+$pw-icon-color: #038bd8;
+$pw-grey: #c1c4c6;
+
+$pw-font-size: $st-font-size-sm;
+
+$st-text: #383838;

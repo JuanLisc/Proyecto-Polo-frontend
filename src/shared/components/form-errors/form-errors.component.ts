@@ -6,7 +6,7 @@ import { ErrorMessages } from 'src/shared/utils/error-messages';
 @Component({
   selector: 'app-form-errors',
   templateUrl: './form-errors.component.html',
-  styleUrls: ['./form-errors.component.css']
+  styleUrls: ['./form-errors.component.scss']
 })
 export class FormErrorsComponent implements OnInit, OnDestroy, OnChanges {
   @Input() control!: FormControl | AbstractControl | null;

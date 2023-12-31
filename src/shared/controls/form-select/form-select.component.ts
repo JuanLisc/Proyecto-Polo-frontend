@@ -24,7 +24,7 @@ const EMPTY_OPTION = Object.seal({
 @Component({
   selector: 'app-form-select',
   templateUrl: './form-select.component.html',
-  styleUrls: ['./form-select.component.css'],
+  styleUrls: ['./form-select.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

@@ -1,0 +1,52 @@
+@import '../../styles/ng-variables';
+
+$header-width-border-bottom: 2px;
+$header-container-height: 64px;
+$content-body-padding: 36px;
+$base-height: $header-container-height;
+$regular-content-body-height: calc(100vh - #{$base-height});
+
+.container-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.calculated-content-body {
+  height: $regular-content-body-height;
+  padding: $content-body-padding;
+}
+
+.header {
+  background: $st-grey-100;
+  border-bottom: $header-width-border-bottom darken($st-grey-100, 15%) solid;
+  z-index: 10;
+}
+
+header {
+  display: flex;
+  flex: 1;
+}
+
+.header-container {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+mat-toolbar {
+  height: $header-container-height !important;
+  box-sizing: border-box !important;
+}
+
+.calculated-content-body {
+  height: $regular-content-body-height;
+  padding: $content-body-padding;
+}

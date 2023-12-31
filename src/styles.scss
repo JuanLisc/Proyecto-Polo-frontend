@@ -1,0 +1,150 @@
+/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@import './app/styles/global';
+//@import '../src/shared/directives/button/button';
+@import "@angular/cdk/overlay-prebuilt.css";
+@import '@angular/material/theming';
+
+@include mat.core();
+@import './assets/theme/st-theme';
+
+$st-typography: mat.define-typography-config(
+  $font-family: "'Lato', sans-serif",
+);
+
+@include mat.core-theme($st-theme);
+@include mat.all-component-themes($st-theme);
+@include mat.all-component-typographies($st-typography);
+
+@import './app/styles/responsive';
+
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+  &.dark-backdrop {
+    background: #000;
+    opacity: 0.85 !important;
+  }
+}
+
+.cdk-overlay-pane {
+  max-width: none !important;
+}
+
+.cropper.cdk-overlay-pane {
+  max-width: 600px !important;
+  width: 100%;
+}
+
+.project-preview  {
+  &.cdk-overlay-pane {
+    min-width: 0;
+  }
+  .mat-dialog-container {
+    min-width: 0;
+  }
+}
+
+.reported-dialog  {
+  &.cdk-overlay-pane {
+    min-width: 0;
+    max-width: 700px !important;
+    width: 100% !important;
+  }
+  .mat-dialog-container {
+    min-width: 0;
+  }
+}
+
+.image-popup  {
+  &.cdk-overlay-pane {
+    max-width: 900px !important;
+    width: 100%;
+  }
+  .mat-dialog-container {
+    padding: 0;
+  }
+}
+
+.upload-media {
+  &.cdk-overlay-pane {
+    width: 100%;
+    max-width: 800px !important;
+    //margin-bottom: auto !important;
+  }
+}
+
+.dialog-map, .explanation {
+  // width: 100%;
+  //height: 100%;
+  &.cdk-overlay-pane {
+    width: 100%;
+    max-width: 800px !important;
+    max-height: 100% !important;
+  }
+  .mat-dialog-container {
+  }
+}
+
+.img-cropper-dialog {
+  &.cdk-overlay-pane {
+    max-width: 100% !important;
+  }
+
+  .mat-dialog-container {
+    box-sizing: border-box;
+    z-index: 1000;
+    display: flex;
+    max-height: 100%;
+    background-color: white;
+  }
+}
+
+.cdk-visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  outline: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.app-form-select-all {
+  overflow: hidden;
+  .sel-all-checkbox {
+    .mat-checkbox-layout  {
+      width: 100%;
+      align-items: flex-start;
+      .mat-checkbox-inner-container {
+        margin: 0;
+        margin-right: 8px;
+        margin-top: 4px;
+      }
+    }
+  }
+  .options-container {
+    overflow: auto;
+    max-height: 200px;
+  }
+}
+
+.no-results-found {
+  .emoji {
+    font-size: 28px;
+    margin-right: 4px;
+  }
+}
+
+.actions {
+  margin-bottom: 35px;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

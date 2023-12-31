@@ -5,7 +5,7 @@ import { Roles } from '../../../shared/utils/enums';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.css']
+  styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent {
 	

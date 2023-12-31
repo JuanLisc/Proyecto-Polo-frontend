@@ -1,0 +1,132 @@
+@import '../../../styles/ng-variables';
+@import '../../../styles/fonts';
+@import '../../../styles/pills';
+@import '../../../styles/table';
+
+$content-left-margin: 30px;
+
+.meetings-list-container {
+  &__interaction {
+    &__filter {
+      display: 'inline-block';
+      margin-left: 10px;
+    }
+  }
+
+  &__table {
+    border-right: none;
+    border-left: none;
+    border-radius: 0;
+
+    tr {
+      th,
+      td {
+        padding: 0;
+      }
+
+      td {
+        &:nth-child(3),
+        &:nth-child(7) {
+          padding-right: 10px;
+        }
+
+        &:nth-child(5) {
+          @include text-ellipsis();
+          padding-right: 15px;
+        }
+      }
+
+      th {
+        box-sizing: border-box;
+      }
+
+      &:last-child {
+        td {
+          &:first-child,
+          &:last-child {
+            border-radius: 0;
+          }
+        }
+      }
+
+      &:nth-child(odd) {
+        td:first-child {
+          border-left: none;
+        }
+
+        td:last-child {
+          border-right: none;
+        }
+      }
+    }
+
+    &__header {
+
+      &__id {
+        width: 60px;
+      }
+
+      &__actions {
+        width: var(--recording-list__recording-list__table__header__actions__width);
+      }
+    }
+  }
+
+  &__content-block {
+    height: 100%;
+  }
+
+  &__empty-list {
+    padding-top: 20px;
+    border-top: 1px solid #e6e7e8;
+
+    &--archived {
+      margin-left: 0;
+    }
+
+    &__title {
+      font-size: $st-font-size-md;
+    }
+
+    &__description {
+      font-size: $st-font-size-sm;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__meetings-list {
+    list-style-type: none;
+    padding-left: $content-left-margin;
+
+    &__item {
+      background-color: #e6e7e8;
+      border-radius: 10px;
+      font-size: $st-font-size-base;
+      padding: 30px 15px;
+      margin-bottom: 10px;
+      height: 44px;
+
+      &__property {
+        &:not(:first-child) {
+          margin-left: 20px;
+        }
+
+        &__id {
+          margin-left: 4px;
+          @include text-ellipsis();
+        }
+      }
+    }
+  }
+
+  &__options {
+    padding-bottom: 15px !important;
+    width: 100%;
+    border-bottom: 1px solid #e6e6e6;
+  }
+}
+
+.responsive-table-container {
+  @include table-container-base-styles(1200px);
+  min-height: 520px;
+}

@@ -1,0 +1,54 @@
+$table-breakpoint: 1100px;
+
+@mixin table-base-styles(
+  $dark-background-color: #f3f4f5,
+  $common-border-color: #e8e9e9,
+  $common-border-radius: 5px,
+  $common-border-width: 1px
+) {
+  $common-border: $common-border-width solid $common-border-color;
+  border: $common-border;
+  border-radius: $common-border-radius;
+  box-shadow: none;
+  border-spacing: 0;
+  tr {
+    td {
+      border-bottom: unset;
+      border-top: $common-border;
+    }
+    th {
+      background-color: transparent;
+      border-bottom-width: 0px;
+      text-align: unset;
+    }
+    &:nth-child(odd) {
+      td {
+        background-color: $dark-background-color;
+      }
+    }
+    &:nth-child(even) {
+      td {
+        background-color: transparent;
+      }
+    }
+    &:last-child {
+      td {
+        &:first-child {
+          border-bottom-left-radius: $common-border-radius;
+        }
+        &:last-child {
+          border-bottom-right-radius: $common-border-radius;
+        }
+      }
+    }
+  }
+}
+
+@mixin table-container-base-styles($table-min-width: $table-breakpoint) {
+  // overflow-x: scroll;
+
+  table {
+    min-width: $table-min-width;
+    @include table-base-styles;
+  }
+}

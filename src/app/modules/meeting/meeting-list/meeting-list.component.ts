@@ -6,11 +6,12 @@ import { NotificationService } from '../../../../shared/services/notification.se
 import { MatDialog } from '@angular/material/dialog';
 import { MeetingCreateComponent } from '../meeting-create/meeting-create.component';
 import { FormControl } from '@angular/forms';
+import { format } from 'date-fns';
 
 @Component({
   selector: 'app-meeting-list',
   templateUrl: './meeting-list.component.html',
-  styleUrls: ['./meeting-list.component.css']
+  styleUrls: ['./meeting-list.component.scss']
 })
 export class MeetingListComponent implements OnInit, OnDestroy {
   meetingsList: MeetingEntity[] = [];
@@ -60,7 +61,6 @@ export class MeetingListComponent implements OnInit, OnDestroy {
 				})
 			)
 			.subscribe();
-		//this.router.navigate(['meetings', 'create']);
   }
 
   handleDeleteMeeting (meetingId: number): void {
@@ -88,6 +88,10 @@ export class MeetingListComponent implements OnInit, OnDestroy {
 	setDayFilter (): void {
 		this.getMeetings(this.queryDateControl.value);
 	}
+
+  formatDate (date: Date): string {
+    return format(date, 'dd-MM-yyyy');
+  }
 
 	onCancel (): void {
 		this.getMeetings();

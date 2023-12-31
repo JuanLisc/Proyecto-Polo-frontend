@@ -1,0 +1,38 @@
+.new-meeting-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-container {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 3%;
+}
+
+.label-title {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.form-group-divider {
+  margin: 10px 0;
+}
+
+.input-container {
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+}
+
+.form-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    margin-right: 15px;
+  }
+}

@@ -1,0 +1,85 @@
+@import '../../styles/ng-variables';
+
+.sidenav-container {
+  background-color: $st-black;
+  width: 200px;
+}
+
+.nav-link {
+  color: $st-grey-100 !important;
+  transition: background .2s ease;
+  &:hover, &:focus {
+    background: rgba(255,255,255,.15);
+  }
+}
+
+.nav-link, .nav-list-section__title {
+  align-items: center;
+  color: $white;
+  display: inline-flex;
+}
+
+.sidebar__nav-link--active {
+  background: rgba(255,255,255,.15);
+  color: $white !important;
+  width: 100%;
+}
+
+.nav-link-text {
+  color: white;
+  margin-left: 12px;
+  margin-top: 5px;
+}
+
+.logo-container {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid white;
+  margin-bottom: 15px;
+}
+
+.logo {
+  width: 115px;
+  height: 115px;
+  margin-right: auto;
+  margin-left: 41px;
+  margin-bottom: 50px;
+  margin-top: 15px;
+}
+
+.nav-list-section {
+  margin-top: 35px;
+
+  &__title {
+    padding: 0px 16px;
+  }
+
+  &-footer {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 35px;
+    flex-direction: column;
+    padding: 0 16px;
+    position: absolute;
+    bottom: 0;
+
+    .copyright {
+      margin-top: 10px;
+      color:white;
+      font-size: 10px;
+
+      &-icon {
+        font-size: 10px;
+        width: 12px;
+      }
+    }
+  }
+}
+
+::ng-deep .mdc-list-item__primary-text {
+  color: white !important;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+}

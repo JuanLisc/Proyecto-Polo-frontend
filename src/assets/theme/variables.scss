@@ -1,0 +1,74 @@
+// Add color variables here.
+:root {
+  --primary-color-light: #2186CC;
+  --primary-color: #277AC3;
+  --primary-color-background: #2779C345;
+  --primary-color-100: #e8f0f9;
+  --primary-color-300: #7daedb;
+  --primary-color-700: #145b8d;
+  --primary-color-900: #28415A;
+  --secondary-color: #8bc34a;
+  --warning-color: #F57C00;
+  --alert-color: #F43F38;
+  --gray-color: #9F9F9F;
+  --high-emphasis: #000000DE;
+  --medium-emphasis: #00000099;
+  --gray-dark: #8B8B8B;
+  --gray-soft-color: #A6A6A6;
+  --gray-softier-color: #C0C0C0;
+  --green-landing: #82B75B;
+  --facebook-color: #1877F2;
+  --twitter-color: #1DA1F2;
+  --youtube-color: #FF0008;
+  --linkeding-color: #0077B5;
+  --instagram-color: #E4405F;
+
+  // Blue
+  --st-darker-blue: #28415A;
+  --st-dark-blue: #004F92;
+  --st-blue: #277AC3;
+  --st-light-blue: #7DAEDB;
+  --st-lighter-blue: #C2DEF0;
+  --st-lightest-blue: #E8F0F9;
+  // Blue RGB (to be used when rgba() is necessary)
+  --st-darker-blue-rgb: 40, 65, 90;
+  --st-dark-blue-rgb: 0, 79, 146;
+  --st-blue-rgb: 39, 122, 195;
+  --st-light-blue-rgb: 125, 174, 219;
+  --st-lighter-blue-rgb: 194, 222, 240;
+  --st-lightest-blue-rgb: 232, 240, 249;
+  // Green
+  --st-dark-green: #67B114;
+  --st-green: #8BC34A;
+  --st-light-green: #B1DB7D;
+  --st-lighter-green: #C0E696;
+  --st-lightest-green: #E3F4D1;
+  // Green RGB
+  --st-dark-green-rgb: 103, 177, 20;
+  --st-green-rgb: 139, 195, 74;
+  --st-light-green-rgb: 177, 219, 125;
+  --st-lighter-green-rgb: 192, 230, 150;
+  --st-lightest-green-rgb: 227, 244, 209;
+  // Neutral
+  --st-gray-darkest: #212121;
+  --st-gray-darker: #666666;
+  --st-gray-dark: #999999;
+  --st-gray: #A2A2A2;
+  --st-gray-light: #CDCDCD;
+  --st-gray-lighter: #EDEDED;
+  --st-gray-lightest: #F5F5F5;
+  // RED
+  --st-warn: #D90000;
+
+  // Yellow
+  --st-yellow: #F0B93B;
+  --st-green-b: #C8E052;
+  --st-red: #F44336;
+  --st-cyan: #47CFEB;
+  --st-orange: #ED872D;
+
+  // Shadows
+  --st-shadow-blue: #277AC337;
+  --st-shadow-green: #8BC34A66;
+
+}

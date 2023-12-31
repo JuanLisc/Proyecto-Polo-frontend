@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MeetingService } from '../../../core/rest/services/meeting.service';
-import { Router } from '@angular/router';
 import { NotificationService } from '../../../../shared/services/notification.service';
 import { noop, tap } from 'rxjs';
 import { MatDialogRef } from '@angular/material/dialog';
@@ -9,7 +8,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 @Component({
   selector: 'app-meeting-create',
   templateUrl: './meeting-create.component.html',
-  styleUrls: ['./meeting-create.component.css']
+  styleUrls: ['./meeting-create.component.scss']
 })
 export class MeetingCreateComponent implements OnInit {
   createMeetingForm!: FormGroup;
@@ -18,7 +17,6 @@ export class MeetingCreateComponent implements OnInit {
   constructor (
     private readonly formBuilder: FormBuilder,
     private readonly meetingService: MeetingService,
-    private readonly router: Router,
     private readonly notificationService: NotificationService,
     private readonly dialogRef: MatDialogRef<MeetingCreateComponent>
   ) {}
@@ -66,8 +64,6 @@ export class MeetingCreateComponent implements OnInit {
       );
       return;
     }
-
-    console.log(this.createMeetingForm.value);
     
     this.meetingService.createMeeting(this.createMeetingForm.value)
       .pipe(

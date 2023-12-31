@@ -1,0 +1,30 @@
+@import './ng-variables';
+
+$control-bg: $white;
+$control-default-width: 300px;
+$control-default-height: 44px;
+
+$control-border: 1px solid $st-grey-100;
+$control-border-color-focused: $st-blue;
+$control-border-color-error: $st-red;
+$control-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+$control-border-radius: 4px;
+
+$control-padding: 12px;
+
+$disabled-control-bg: $st-grey-100;
+
+
+// TODO -- this is here to replace mixin formerly from internal app 'ui-box'
+@mixin control {
+  background-color: $control-bg;
+  border-radius: $control-border-radius;
+  box-shadow: $control-shadow;
+  border: $control-border;
+  background-image: none;
+
+  &:focus {
+    border-color: $st-blue;
+    box-shadow: none;
+  }
+}

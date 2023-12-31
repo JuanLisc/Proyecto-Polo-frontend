@@ -1,0 +1,72 @@
+@import './ng-variables.scss';
+
+@mixin ui-box {
+  background-color: $white;
+  border-radius: $pw-border-radius;
+  box-shadow: 0 1px 1px 0 #bcbcbc;
+  border: solid 1px #dfdfdf;
+  background-image: none;
+}
+
+@mixin font-xs {
+  font-size: $st-font-size-xs;
+  line-height: 24px;
+  font-weight: $st-font-weight-regular;
+}
+
+@mixin font-xs-500 {
+  @include font-xs();
+  font-weight: $st-font-weight-medium;
+}
+
+@mixin font-sm {
+  font-size: $st-font-size-sm;
+  line-height: 24px;
+  font-weight: $st-font-weight-regular;
+}
+
+@mixin font-sm-500 {
+  @include font-sm();
+  font-weight: $st-font-weight-medium;
+}
+
+@mixin font-base {
+  font-size: $st-font-size-base;
+  line-height: 26px;
+  font-weight: $st-font-weight-regular;
+}
+
+@mixin font-base-500 {
+  @include font-base();
+  font-weight: $st-font-weight-medium;
+}
+
+@mixin font-medium {
+  font-size: $st-font-size-md;
+  line-height: 30px;
+  font-weight: $st-font-weight-regular;
+}
+
+@mixin font-large {
+  font-size: $st-font-size-lg;
+  line-height: 30px;
+  font-weight: $st-font-weight-medium;
+}
+
+@mixin font-xl {
+  font-size: $st-font-size-xl;
+  line-height: 34px;
+  font-weight: $st-font-weight-medium;
+}
+
+@mixin font-xxl {
+  font-size: $st-font-size-xxl;
+  line-height: 42px;
+  font-weight: $st-font-weight-light;
+}
+
+@mixin font-xxxl {
+  font-size: $st-font-size-xxxl;
+  line-height: 64px;
+  font-weight: $st-font-weight-light;
+}

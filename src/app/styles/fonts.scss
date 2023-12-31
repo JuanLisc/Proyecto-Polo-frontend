@@ -1,0 +1,100 @@
+//Font Weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 600;
+
+//Font Sizes
+$font-size-xxxl: 56px;
+$font-size-xxl: 34px;
+$font-size-xl: 24px;
+$font-size-lg: 20px;
+$font-size-md: 18px;
+$font-size-base: 16px;
+$font-size-sm: 14px;
+$font-size-xs: 12px;
+$font-size-xxs: 9px;
+
+@mixin font-xxxl() {
+  font-size: $font-size-xxxl;
+  line-height: 64px;
+  font-weight: $font-weight-light;
+}
+
+@mixin font-xxl() {
+  font-size: $font-size-xxl;
+  line-height: 42px;
+  font-weight: $font-weight-light;
+}
+
+@mixin font-xl() {
+  font-size: $font-size-xl;
+  line-height: 34px;
+  font-weight: $font-weight-medium;
+}
+
+@mixin font-large() {
+  font-size: $font-size-lg;
+  line-height: 30px;
+  font-weight: $font-weight-medium;
+}
+
+@mixin font-large-light() {
+  font-size: $font-size-lg;
+  line-height: 30px;
+  font-weight: $font-weight-light;
+}
+
+@mixin font-medium() {
+  font-size: $font-size-md;
+  line-height: 30px;
+  font-weight: $font-weight-regular;
+}
+
+@mixin font-base() {
+  font-size: $font-size-base;
+  line-height: 26px;
+  font-weight: $font-weight-regular;
+}
+
+@mixin font-base-500() {
+  font-size: $font-size-base;
+  line-height: 26px;
+  font-weight: $font-weight-medium;
+}
+
+@mixin font-small() {
+  font-size: $font-size-sm;
+  line-height: 24px;
+  font-weight: $font-weight-regular;
+}
+
+@mixin font-small-500() {
+  font-size: $font-size-sm;
+  line-height: 24px;
+  font-weight: $font-weight-medium;
+}
+
+@mixin font-xs() {
+  font-size: $font-size-xs;
+  line-height: 24px;
+  font-weight: $font-weight-regular;
+}
+
+@mixin font-xs-500() {
+  font-size: $font-size-xs;
+  line-height: 24px;
+  font-weight: $font-weight-medium;
+}
+
+@mixin font-xxs() {
+  font-size: $font-size-xxs;
+  line-height: 24px;
+  font-weight: $font-weight-regular;
+}
+
+@mixin font-xxs-500() {
+  font-size: $font-size-xxs;
+  line-height: 24px;
+  font-weight: $font-weight-medium;
+}

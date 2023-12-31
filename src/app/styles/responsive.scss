@@ -1,0 +1,29 @@
+/**
+ * Two global screen breakpoints were proposed.
+ */
+$medium-breakpoint: 860px;
+$large-breakpoint: 1280px;
+/**
+ * To avoid name conflicts, the recommended convention for CSS variable
+ * name is the following:
+ * --component-name__element-selector__property
+ */
+:root {
+  // Global small media query
+  @media (max-width: $medium-breakpoint) {
+    --collapsible-action-bar__expanded-bar__display: none;
+    --collapsible-action-bar__collapsed-bar__display: flex;
+  }
+
+  // Global medium media query
+  @media (min-width: $medium-breakpoint) and (max-width: $large-breakpoint) {
+    --collapsible-action-bar__expanded-bar__display: none;
+    --collapsible-action-bar__collapsed-bar__display: flex;
+  }
+
+  // Global large media query
+  @media (min-width: $large-breakpoint) {
+    --collapsible-action-bar__expanded-bar__display: flex;
+    --collapsible-action-bar__collapsed-bar__display: none;
+  }
+}
