@@ -17,7 +17,8 @@ export class MeetingListComponent implements OnInit, OnDestroy {
   meetingsList: MeetingEntity[] = [];
   sub!: Subscription;
   errorMessage!: string;
-	columnsToDisplay = ['detail', 'date', 'hour', 'duration', 'actions'];
+	columnsToDisplay = ['detail', 'date', 'duration', 'actions'];
+  
 	queryDateControl = new FormControl();
 	meetingModalConfig = {
     hasBackdrop: true,

@@ -95,11 +95,10 @@
             </div>
           </div>
 
-          <!-- <div fxLayout="row" *ngIf="loggedUser.role === 'ADMIN'">
+          <div fxLayout="row" *ngIf="loggedUser.role === 'ADMIN'">
             <app-form-select
               *ngIf="role"
               [items]="roles"
-              optionKey="label"
               [formControl]="role"
             >
               <mat-label label-content>{{ 'UserCreateComponent.role-field' | translate }}</mat-label>
@@ -109,7 +108,7 @@
               >
               </app-form-errors>
             </app-form-select>
-          </div> -->
+          </div>
         </div>
 
         <mat-divider class="form-group-divider"></mat-divider>

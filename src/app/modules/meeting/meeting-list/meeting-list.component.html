@@ -33,10 +33,6 @@
               <th mat-header-cell *matHeaderCellDef>{{ 'MeetingListComponent.table.date' | translate }}</th>
               <td mat-cell *matCellDef="let meeting">{{ formatDate(meeting.date, meeting.hour) }}</td>
             </ng-container>
-            <ng-container matColumnDef="hour">
-              <th mat-header-cell *matHeaderCellDef>{{ 'MeetingListComponent.table.hour' | translate }}</th>
-              <td mat-cell *matCellDef="let meeting">{{ meeting.hour }}</td>
-            </ng-container>
             <ng-container matColumnDef="duration">
               <th mat-header-cell *matHeaderCellDef>{{ 'MeetingListComponent.table.duration' | translate }}</th>
               <td mat-cell *matCellDef="let meeting">{{ meeting.duration }}</td>

@@ -16,6 +16,7 @@ export class UserCreateComponent implements OnInit {
   registerForm!: FormGroup;
   errorMessage = '';
   roles = Object.values(Roles);
+  
   loggedUser = this.authService.getCurrentUser();
 
   customFirstNameErrorMsgs = [

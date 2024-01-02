@@ -27,7 +27,7 @@
         {{ emptyOption.labelKey | translate }}
       </mat-option>
       <mat-option class="test" *ngFor="let element of elements; trackBy: trackByFn" [value]="getValueForOption(element)">
-        <span class="option-label">{{ optionKey? element[optionKey]: element}}</span>
+        <span class="option-label">{{ optionKey ? element[optionKey] : element }}</span>
       </mat-option>
     </div>
   </mat-select>
