@@ -1,1 +1,15 @@
 @import '../../../styles/datepicker.scss';
+
+.new-meeting-container {
+  background-color: $st-blue-50;
+}
+
+.label-title {
+  align-self: center;
+  color: $st-blue-600;
+}
+
+/* ::ng-deep .mat-mdc-text-field-wrapper {
+  width: 300px;
+}
+ */

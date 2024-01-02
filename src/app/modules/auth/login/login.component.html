@@ -1,12 +1,14 @@
 <div class="page-background">
   <div align="center">
-    <h5 style="margin-top: 15px;">
+    
+    <h2 style="margin-top: 15px;">
       {{ 'LoginComponent.title' | translate }}
-    </h5>
+    </h2>
     <br>
   </div>
 
   <div class="login-background">
+    <img src="assets/img/logo.png">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <mat-form-field class="input" appearance="outline">
         <mat-label>{{ 'LoginComponent.email-field' | translate }}</mat-label>

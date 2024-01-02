@@ -13,6 +13,12 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class MeetingCreateComponent implements OnInit {
   createMeetingForm!: FormGroup;
   errorMessage!: string;
+  customDurationErrorMsgs = [
+    {
+      key: 'max',
+      customKey: 'duration-max'
+    }
+  ];
 
   constructor (
     private readonly formBuilder: FormBuilder,

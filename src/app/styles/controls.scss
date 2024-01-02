@@ -14,8 +14,6 @@ $control-padding: 12px;
 
 $disabled-control-bg: $st-grey-100;
 
-
-// TODO -- this is here to replace mixin formerly from internal app 'ui-box'
 @mixin control {
   background-color: $control-bg;
   border-radius: $control-border-radius;

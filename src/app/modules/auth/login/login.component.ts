@@ -15,7 +15,7 @@ import { ThemePalette } from '@angular/material/core';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   error = '';
-  color: ThemePalette = 'warn';
+  color: ThemePalette = 'primary';
 
   constructor (
     private readonly router: Router,

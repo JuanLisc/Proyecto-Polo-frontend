@@ -216,7 +216,10 @@ export class UserSettingsComponent implements OnInit {
             'GeneralMessages.successNotificationTitle',
             'UserSettingsComponent.' + result.resultKeys
           );
-          this.router.navigate(['/users']); //TODO: Cambiar redireccionamiento
+
+          this.currentUser.role === 'ADMIN' 
+            ? this.router.navigate(['/users'])
+            : this.router.navigate(['/meetings']);
         })
       )
       .subscribe({
@@ -228,6 +231,8 @@ export class UserSettingsComponent implements OnInit {
   }
 
   onCancel (): void {
-    this.router.navigate(['/users']); //TODO: Cambiar redireccionamiento
+    this.currentUser.role === 'ADMIN' 
+      ? this.router.navigate(['/users'])
+      : this.router.navigate(['/meetings']);
   }
 }

@@ -42,13 +42,11 @@
       </ng-container>
 
       <ng-template #emptyList>
-        <ng-template>
-          <ng-container>
-            <div class="users-list-container__empty-list">
-              <p class="users-list-container__empty-list__title">{{ 'UserListComponent.no-users-created' | translate }}</p>
-            </div>
-          </ng-container>
-        </ng-template>
+        <ng-container>
+          <div class="container__empty-list">
+            <p class="container__empty-list__title">{{ 'UserListComponent.no-users-created' | translate }}</p>
+          </div>
+        </ng-container>
       </ng-template>
     </div>
   </div>

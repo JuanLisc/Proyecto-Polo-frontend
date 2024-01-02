@@ -5,9 +5,9 @@
         <label class="label-title">{{ 'MeetingCreateComponent.description' | translate }}</label>
         <mat-divider class="form-group-divider"></mat-divider>
         
-        <div fxLayout="row">
-          <div class="input-container" fxFlex="50%" style="width: 100%">
-            <mat-form-field class="input" appearance="outline">
+        <div fxLayout="row" style="align-self: center;">
+          <div class="input-container" fxFlex="50%" style="width: 100%;">
+            <mat-form-field class="input" appearance="outline" style="width: 300px;">
               <mat-label>{{ 'MeetingCreateComponent.detail-field' | translate }}</mat-label>
                 <input 
                   matInput
@@ -29,7 +29,7 @@
 
         <div>
           <div fxLayout="row">
-            <div class="input-container" fxFlex="50%" style="width: 100%">
+            <div class="input-container" fxFlex="50%" style="width: 100%; padding-left: 5%; margin-left: 30px;">
               <mat-form-field>
                 <mat-label>{{ 'MeetingCreateComponent.date-field' | translate }}</mat-label>
                 <input matInput [matDatepicker]="date" formControlName="date">
@@ -48,7 +48,7 @@
                 </app-form-errors>
               </mat-form-field>
             </div>
-            <div class="input-container" fxFlex="50%" style="width: 100%">
+            <div class="input-container" fxFlex="50%" style="width: 100%; ">
               <mat-form-field class="input" appearance="outline">
                 <mat-label>{{ 'MeetingCreateComponent.hour-field' | translate }}</mat-label>
                 <input matInput type="number" min="8" max="21" autocomplete="off" formControlName="hour">
@@ -61,14 +61,15 @@
             </div>
           </div>
 
-          <div fxLayout="row">
-            <div class="input-container" fxFlex="50%" style="width: 100%">
+          <div fxLayout="row" >
+            <div class="input-container" fxFlex="50%" style="width: 100%; padding-left: 33%;">
               <mat-form-field class="input" appearance="outline">
                 <mat-label>{{ 'MeetingCreateComponent.duration-field' | translate }}</mat-label>
                 <input matInput type="number" min="1" max="10" autocomplete="off" formControlName="duration">
                 <app-form-errors
                   fieldName="{{ 'MeetingCreateComponent.duration-field' | translate }}"
                   [control]="createMeetingForm.get('duration')"
+                  [customErrorMsg]="customDurationErrorMsgs"
                 >
                 </app-form-errors>
               </mat-form-field>
@@ -77,7 +78,7 @@
         </div>
 
         <mat-divider class="form-group-divider"></mat-divider>
-        <div fxLayout="row" fxLayoutAlign="flex-end" fxFlex="50%">
+        <div fxLayout="row" fxLayoutAlign="center" fxFlex="50%" style="padding-bottom: 2.5%;">
           <button 
             stPrimaryBtn
             [disabled]="createMeetingForm.invalid"

@@ -1,5 +1,9 @@
 @import './ng-variables.scss';
 
+.mat-datepicker-toggle {
+  color: $st-blue-600;
+}
+
 ::ng-deep .mat-calendar{
   background: $st-blue-50;
 }
@@ -22,4 +26,13 @@
 
 ::ng-deep .mat-datepicker-actions ng-star-inserted {
   background: $st-blue-50;
+}
+
+::ng-deep .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+  border-color: $st-blue-600;
+}
+
+::ng-deep .mat-calendar-body-selected {
+  border-color: $st-blue-200;
+  color: $st-blue-600;
 }

@@ -188,18 +188,18 @@ export class FormSelectComponent implements OnInit, OnChanges, ControlValueAcces
   }
 
   toggleSelection(change: MatCheckboxChange): void {
-    if (change.checked) { // select all values
+    if (change.checked) {
       const all = [];
       for (const e of this.elements) {
         const val = this.getValueForOption(e);
         if (val) { all.push(val); }
       }
-      // check if a form control was given
+
       if (this.formControl) {
         this.formControl.setValue(all);
       }
       this.selectionChange.emit(all);
-    } else { // clear all values
+    } else { 
       if (this.formControl) {
         this.formControl.setValue([]);
       }

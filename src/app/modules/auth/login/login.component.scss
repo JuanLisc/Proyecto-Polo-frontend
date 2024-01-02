@@ -13,20 +13,22 @@ h2 {
   text-decoration: underline;
 }
 
-h5 {
-  color:#ffffff;
-  font-size:15px;
+h2 {
+  color:$st-blue-600;
+
 }
 
 img {
-  margin-top: 80px;
+  width: 100%;
+  height: auto;
+  padding-right: 3%;
 }
 
 .login-background {
   width:35%;
   padding:10px;
-  // border-radius:30px;
-  // border:2px solid #e43012;
+  border-radius:10px;
+  border:5px solid $st-blue-600;
   margin:0px auto;
 }
 
@@ -34,8 +36,8 @@ img {
   .login-background{
     width:35%;
     padding:10px;
-    // border-radius:30px;
-    // border:2px solid #e43012;
+    border-radius:10px;
+    border:10px solid $st-blue-600;
     margin:0px auto;
   }
 }
@@ -44,8 +46,8 @@ img {
   .login-background{
     width:45%;
     padding:10px;
-    // border-radius:30px;
-    // border:2px solid #e43012;
+    border-radius:10px;
+    border:10px solid $st-blue-600;
     margin:0px auto;
   }
 }
@@ -54,8 +56,8 @@ img {
   .login-background{
     width:55%;
     padding:10px;
-    // border-radius:30px;
-    // border:2px solid #e43012;
+    border-radius:10px;
+    border:10px solid $st-blue-600;
     margin:0px auto;
   }
 }
@@ -64,8 +66,8 @@ img {
   .login-background{
     width:75%;
     padding:10px;
-    // border-radius:30px;
-    // border:2px solid #e43012;
+    border-radius:10px;
+    border:10px solid $st-blue-600;
     margin:0px auto;
   }
 }
@@ -88,7 +90,7 @@ mat-form-field {
   padding-right: 3px!important;
 
   .mdc-checkbox__background {
-    border-color: #ffffff!important;
+    border-color: $st-blue-600 !important;
   }
   
   .mdc-checkbox__ripple {
@@ -97,13 +99,13 @@ mat-form-field {
 }
 
 ::ng-deep .mdc-notched-outline__leading {
-  border-color: white !important;
+  border-color: $st-blue-600 !important;
 }
 ::ng-deep .mdc-notched-outline__notch {
-  border-color: white !important;
+  border-color: $st-blue-600 !important;
 }
 ::ng-deep .mdc-notched-outline__trailing {
-  border-color: white !important;
+  border-color: $st-blue-600 !important;
 }
 
 ::ng-deep .mdc-text-field--invalid .mdc-notched-outline > * {
@@ -111,11 +113,11 @@ mat-form-field {
 }
 
 .loginInput {
-  color: white!important;
+  color: 600!important;
 }
 
 mat-label {
-  color: white;
+  color: 600;
 }
 
 button {

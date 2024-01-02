@@ -49,7 +49,7 @@ export class FormErrorsComponent implements OnInit, OnDestroy, OnChanges {
     const controlErrors = this.control.errors;
     if (controlErrors && this.isPolluted()) {
       const keys = Object.keys(controlErrors);
-      // Loop through errors, first match gets shown.
+
       for (const keyError of keys) {
         if (this.customErrorMsg) {
           const customKey = (this.customErrorMsg.find(item => item.key === keyError))?.customKey;          

@@ -4,7 +4,7 @@ import { Attribute, Directive, HostBinding } from '@angular/core';
   selector: 'button[stPrimaryBtn],button[stSecondaryBtn],button[stGhostBtn],button[stLinkBtn]',
 })
 export class ButtonDirective {
-  // attributes added for IDE autocompletion purpose
+
   constructor(@Attribute('large') large: any,
               @Attribute('shadow') shadow: any
   ) { }

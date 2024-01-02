@@ -31,7 +31,6 @@ export class AppComponent {
       if (firstLogin === null || firstLogin === undefined) {
         sessionStorage.setItem('firstLogin', 'true');
       }
-      //this.router.navigate(['/users']);
     } else {
       this.router.navigate(['/login']);
     }  
